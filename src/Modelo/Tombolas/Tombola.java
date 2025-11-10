@@ -6,8 +6,8 @@ package Modelo.Tombolas;
 
 /**
  *
- * @author Ricardo Chaves
+ * @author Marisol Alfaro
  */
 public class Tombola {
-    
+
 }

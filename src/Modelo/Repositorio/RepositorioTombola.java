@@ -6,7 +6,7 @@ package Modelo.Repositorio;
 
 /**
  *
- * @author Ricardo Chaves
+ * @author Marisol Alfaro
  */
 public class RepositorioTombola {
     

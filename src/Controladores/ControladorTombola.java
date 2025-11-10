@@ -6,7 +6,7 @@ package Controladores;
 
 /**
  *
- * @author Ricardo Chaves
+ * @author Marisol Alfaro
  */
 public class ControladorTombola {
     

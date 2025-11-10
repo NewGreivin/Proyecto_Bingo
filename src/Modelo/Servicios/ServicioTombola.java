@@ -6,7 +6,7 @@ package Modelo.Servicios;
 
 /**
  *
- * @author Ricardo Chaves
+ * @author Marisol Alfaro
  */
 public class ServicioTombola {
     
