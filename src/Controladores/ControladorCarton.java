@@ -18,13 +18,12 @@ public class ControladorCarton {
         this.servicio = new ServicioCarton();
     }
     
-    public void CrearCarton(boolean automatico, int[][] valores){
+    public CartonBingo CrearCarton(boolean automatico, int[][] valores){
         CartonBingo nuevo = servicio.crearCarton(automatico, valores);
-        if (nuevo != null){
-
-        } else {
+        if (nuevo == null){
             throw new IllegalArgumentException("No se pudo crear el carton");
-        }
+        } 
+        return nuevo;
     }
     
     public void ingresarNumeroManual(String id){
