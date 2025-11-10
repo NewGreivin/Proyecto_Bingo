@@ -7,6 +7,7 @@ package Modelo.Servicios;
 import Modelo.Cartones.CartonBingo;
 import Modelo.Fabrica.FabricaCarton;
 import Modelo.Repositorio.RepositorioCarton;
+import java.util.Collection;
 
 /**
  *
@@ -33,5 +34,9 @@ public class ServicioCarton {
     
     public void eliminarCarton(String id){
         repo.eliminarCarton(id);
+    }
+    
+    public Collection<CartonBingo> obtenerCartones() {
+        return repo.obtenerCartones();
     }
 }
