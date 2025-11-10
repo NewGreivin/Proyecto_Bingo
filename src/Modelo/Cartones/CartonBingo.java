@@ -33,7 +33,7 @@ public class CartonBingo {
         this.marcados = marcados;
     }
 
-    public CartonBingo(int[][] numero, boolean[][] marcados, String id) {
+    public CartonBingo(String id) {
         this.numero = new int[5][5];
         this.marcados = new boolean[5][5];
         this.id = id;

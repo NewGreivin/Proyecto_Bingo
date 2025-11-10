@@ -12,35 +12,6 @@ import java.util.Random;
  * @author Ricardo Chaves
  */
 public class Validador {
-    //Crear carton Aleatorio. 
-    public static int[][] generarCarton(){
-        int[][] numeros = new int[5][5];
-        Random rand = new Random();
-        
-        int[][] rangos = {
-            {1, 15},
-            {16, 30},
-            {31, 45},
-            {46, 60},
-            {61, 75}
-        };
-        
-        for (int i = 0; i < 5; i++) {
-            HashSet<Integer> usados = new HashSet<>();
-            for (int j = 0; j < 5; j++) {
-                if (i == 2 && j == 2) continue;
-                int num;
-                
-                do {
-                    num = rand.nextInt(rangos[i][1] - rangos[i][0] + 1) + rangos[i][0];
-                } while (usados.contains(num));
-                usados.add(num);
-                numeros[i][j] = num;
-            }
-        }
-        return numeros;
-    }
-    
     // 1. Verificar duplicados en el cartón
     public static boolean verificarDuplicados(int[][] matriz) {
         HashSet<Integer> usados = new HashSet<>();
