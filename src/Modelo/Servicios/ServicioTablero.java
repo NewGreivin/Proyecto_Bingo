@@ -22,7 +22,7 @@ public class ServicioTablero {
         return repo.obtenerTablero().obtenerEstadoTablero();
     }
 
-    public ServicioTablero(RepositorioTablero r) {
-        this.repo = r;
+    public ServicioTablero() {
+        this.repo = RepositorioTablero.getInstancia();
     }
 }
