@@ -34,7 +34,7 @@ public class FabricaCarton {
     }
     
     
-    public CartonBingo crearCartonAutomatico(String id){
+    public static CartonBingo crearCartonAutomatico(String id){
         CartonBingo carton = new CartonBingo(id);
         int[][] numeros = new int[5][5];
         
