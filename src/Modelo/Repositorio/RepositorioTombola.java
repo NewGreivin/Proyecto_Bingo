@@ -4,10 +4,24 @@
  */
 package Modelo.Repositorio;
 
+import Modelo.Tombolas.Tombola;
+
 /**
  *
  * @author Marisol Alfaro
  */
 public class RepositorioTombola {
+    private Tombola tombolaActual;
+
+    public RepositorioTombola() {
+        this.tombolaActual = new Tombola();
+    }
     
+    public Tombola obtenerTombola() {
+        return tombolaActual;
+    }
+    
+    public void reiniciarTombola(){
+        this.tombolaActual = new Tombola();
+    }
 }
