@@ -17,8 +17,7 @@ public class FabricaCarton {
     
     public static CartonBingo crearCartonManual(String id, int[][] valores) {
         if (!Validador.validarFormatoCarton(valores)) {
-            System.out.println("Hay numero repetidos o fuera de rango.");
-            return null;
+            throw new IllegalArgumentException("Hay numeros repetidos o fuera del rango ");
         }
 
         // Crear el cartón con los valores dados
@@ -29,7 +28,6 @@ public class FabricaCarton {
             }
         }
         
-        System.out.println("Su carton fue creado.");
         return carton;
     }
     
@@ -61,7 +59,6 @@ public class FabricaCarton {
             }
         }
 
-        System.out.println("Su carton fue creado.");
         return carton;
     }
 }
