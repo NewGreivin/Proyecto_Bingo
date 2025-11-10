@@ -24,7 +24,7 @@ public class ControladorTombola {
     public void ingresarNumeroManual(int numero){
         boolean exito = tombola.ingresarNumeroManual(numero);
         if(!exito){
-            throw new IllegalArgumentException("El numero ingresado no es valido o ya fue usado");
+            throw new IllegalArgumentException("El numero ingresado ya fue usado");
         }
     }
     
