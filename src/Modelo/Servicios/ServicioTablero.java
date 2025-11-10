@@ -1,13 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * @author Greivin
  */
 package Modelo.Servicios;
 
-/**
- *
- * @author Ricardo Chaves
- */
+import Modelo.Repositorio.RepositorioTablero;
+import Modelo.Tableros.TableroNumeros;
+
 public class ServicioTablero {
-    
+    private final RepositorioTablero repo;
+
+    public void marcarNumero(int numero) {
+        TableroNumeros tablero = repo.obtenerTablero();
+        tablero.setNumerosMarcados(numero);
+    }
+
+    public void reiniciarTablero() {
+        repo.reiniciarTablero();
+    }
+
+    public boolean[] obtenerEstado() {
+        return repo.obtenerTablero().obtenerEstadoTablero();
+    }
+
+    public ServicioTablero(RepositorioTablero r) {
+        this.repo = r;
+    }
 }
