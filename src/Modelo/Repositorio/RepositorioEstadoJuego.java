@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * @author Greivin
  */
 package Modelo.Repositorio;
 
-/**
- *
- * @author Ricardo Chaves
- */
+import Modelo.Estados.EstadoJuego;
+
 public class RepositorioEstadoJuego {
-    
+    private EstadoJuego estado;
+
+    public RepositorioEstadoJuego() {
+        this.estado = EstadoJuego.getInstancia();
+    }
+
+    public EstadoJuego obtenerEstado() {
+        return estado;
+    }
+
+    public void guardarEstado(EstadoJuego nuevoEstado) {
+        if (nuevoEstado != null)
+            this.estado = nuevoEstado;
+    }
 }
