@@ -4,10 +4,28 @@
  */
 package Modelo.Servicios;
 
+import Modelo.Strategy.ReglaVictoria;
+
 /**
  *
  * @author Ricardo Chaves
  */
 public class ServicioStrategy {
+    private ReglaVictoria estrategiaActual;
     
+    public ServicioStrategy(ReglaVictoria estrategiaInicial) {
+        this.estrategiaActual = estrategiaInicial;
+    }
+    
+    public void cambiarEstrategia(ReglaVictoria nuevaRegla) {
+        this.estrategiaActual = nuevaRegla;
+    }
+    
+    public String obtenerNombreEstrategia() {
+        return estrategiaActual.getNombreRegla();
+    }
+    
+    public ReglaVictoria getEstrategiaActual() {
+        return estrategiaActual;
+    }
 }
