@@ -17,7 +17,7 @@ import java.util.Set;
  */
 public class Tombola {
     private Set<Integer> numerosDisponibles;
-    private Integer ultimoNumero;
+    private int ultimoNumero;
     private List<TombolaObserver> observadores;
 
     public Tombola() {
@@ -30,7 +30,7 @@ public class Tombola {
         for(int i=1; i<=75; i++) {
             this.numerosDisponibles.add(i);
         }
-        this.ultimoNumero = null;
+        this.ultimoNumero = -1;
     }
     
     public boolean ingresarNumeroManual(int numero) {
