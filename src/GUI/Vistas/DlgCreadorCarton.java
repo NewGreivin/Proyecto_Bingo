@@ -4,22 +4,119 @@
  */
 package GUI.Vistas;
 
+import Controladores.ControladorCarton;
+import Modelo.Cartones.CartonBingo;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author Greivin
+ * @author Ricardo Chaves
  */
 public class DlgCreadorCarton extends javax.swing.JDialog {
+    
+    private ControladorCarton carton;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DlgCreadorCarton.class.getName());
 
     /**
-     * Creates new form DlgCreadorCarton
+     * Ricardo Chaves
      */
     public DlgCreadorCarton(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        carton = new ControladorCarton();
+    }
+    
+    public int[][] obtenerValoresFormulario(){
+        
+        int[][]valores = new int[5][5];
+        
+        try{
+            //B
+            valores[0][0] = Integer.parseInt(txtNumCampo1.getText());
+            valores[1][0] = Integer.parseInt(txtNumCampo2.getText());
+            valores[2][0] = Integer.parseInt(txtNumCampo3.getText());
+            valores[3][0] = Integer.parseInt(txtNumCampo4.getText());
+            valores[4][0] = Integer.parseInt(txtNumCampo5.getText());
+            //I
+            valores[0][1] = Integer.parseInt(txtNumCampo6.getText());
+            valores[1][1] = Integer.parseInt(txtNumCampo7.getText());
+            valores[2][1] = Integer.parseInt(txtNumCampo8.getText());
+            valores[3][1] = Integer.parseInt(txtNumCampo9.getText());
+            valores[4][1] = Integer.parseInt(txtNumCampo10.getText());
+            //N
+            valores[0][2] = Integer.parseInt(txtNumCampo11.getText());
+            valores[1][2] = Integer.parseInt(txtNumCampo12.getText());
+            valores[2][2] = 0;
+            valores[3][2] = Integer.parseInt(txtNumCampo14.getText());
+            valores[4][2] = Integer.parseInt(txtNumCampo15.getText());
+            //G
+            valores[0][3] = Integer.parseInt(txtNumCampo16.getText());
+            valores[1][3] = Integer.parseInt(txtNumCampo17.getText());
+            valores[2][3] = Integer.parseInt(txtNumCampo18.getText());
+            valores[3][3] = Integer.parseInt(txtNumCampo19.getText());
+            valores[4][3] = Integer.parseInt(txtNumCampo20.getText());
+            //O
+            valores[0][4] = Integer.parseInt(txtNumCampo21.getText());
+            valores[1][4] = Integer.parseInt(txtNumCampo22.getText());
+            valores[2][4] = Integer.parseInt(txtNumCampo23.getText());
+            valores[3][4] = Integer.parseInt(txtNumCampo24.getText());
+            valores[4][4] = Integer.parseInt(txtNumCampo25.getText());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Debe llevar todos los espacios llenos el carton", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+        return valores;
     }
 
+    public void CrearCartonManual(){
+        
+        int[][] valores = obtenerValoresFormulario();
+        
+        if (valores == null) return;
+        
+        try {
+            CartonBingo cartones = carton.CrearCarton(false, valores);
+            JOptionPane.showMessageDialog(this, "Carton fue creado con exito: " + cartones.getId());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "No se puedo crear el carton", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void limpiarCarton(){
+        //B
+        txtNumCampo1.setText("");
+        txtNumCampo2.setText("");
+        txtNumCampo3.setText("");
+        txtNumCampo4.setText("");
+        txtNumCampo5.setText("");
+        //I
+        txtNumCampo6.setText("");
+        txtNumCampo7.setText("");
+        txtNumCampo8.setText("");
+        txtNumCampo9.setText("");
+        txtNumCampo10.setText("");
+        //N
+        txtNumCampo11.setText("");
+        txtNumCampo12.setText("");
+        txtNumCampo13.setText("");
+        txtNumCampo14.setText("");
+        txtNumCampo15.setText("");
+        //G
+        txtNumCampo16.setText("");
+        txtNumCampo17.setText("");
+        txtNumCampo18.setText("");
+        txtNumCampo19.setText("");
+        txtNumCampo20.setText("");
+        //O
+        txtNumCampo21.setText("");
+        txtNumCampo22.setText("");
+        txtNumCampo23.setText("");
+        txtNumCampo24.setText("");
+        txtNumCampo25.setText("");
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,31 +133,31 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
         pnlManual1 = new javax.swing.JPanel();
         pnlAutomatico2 = new javax.swing.JPanel();
         btn_CerrarCarton = new javax.swing.JToggleButton();
-        txtNumCampo = new javax.swing.JFormattedTextField();
+        txtNumCampo2 = new javax.swing.JFormattedTextField();
         txtNumCampo1 = new javax.swing.JFormattedTextField();
+        txtNumCampo3 = new javax.swing.JFormattedTextField();
         txtNumCampo4 = new javax.swing.JFormattedTextField();
         txtNumCampo5 = new javax.swing.JFormattedTextField();
         txtNumCampo6 = new javax.swing.JFormattedTextField();
-        txtNumCampo2 = new javax.swing.JFormattedTextField();
-        txtNumCampo7 = new javax.swing.JFormattedTextField();
-        txtNumCampo8 = new javax.swing.JFormattedTextField();
-        txtNumCampo9 = new javax.swing.JFormattedTextField();
-        txtNumCampo3 = new javax.swing.JFormattedTextField();
         txtNumCampo10 = new javax.swing.JFormattedTextField();
+        txtNumCampo9 = new javax.swing.JFormattedTextField();
+        txtNumCampo8 = new javax.swing.JFormattedTextField();
+        txtNumCampo7 = new javax.swing.JFormattedTextField();
+        txtNumCampo20 = new javax.swing.JFormattedTextField();
+        txtNumCampo19 = new javax.swing.JFormattedTextField();
+        txtNumCampo17 = new javax.swing.JFormattedTextField();
+        txtNumCampo18 = new javax.swing.JFormattedTextField();
+        txtNumCampo16 = new javax.swing.JFormattedTextField();
         txtNumCampo11 = new javax.swing.JFormattedTextField();
         txtNumCampo12 = new javax.swing.JFormattedTextField();
         txtNumCampo13 = new javax.swing.JFormattedTextField();
         txtNumCampo14 = new javax.swing.JFormattedTextField();
         txtNumCampo15 = new javax.swing.JFormattedTextField();
-        txtNumCampo16 = new javax.swing.JFormattedTextField();
-        txtNumCampo17 = new javax.swing.JFormattedTextField();
-        txtNumCampo18 = new javax.swing.JFormattedTextField();
-        txtNumCampo19 = new javax.swing.JFormattedTextField();
-        txtNumCampo20 = new javax.swing.JFormattedTextField();
         txtNumCampo21 = new javax.swing.JFormattedTextField();
         txtNumCampo22 = new javax.swing.JFormattedTextField();
         txtNumCampo23 = new javax.swing.JFormattedTextField();
         txtNumCampo24 = new javax.swing.JFormattedTextField();
+        txtNumCampo25 = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -72,7 +169,6 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
 
         lbl_B1.setBackground(new java.awt.Color(0, 0, 0));
         lbl_B1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 50)); // NOI18N
-        lbl_B1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_B1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_B1.setText("Crear Cartón");
 
@@ -106,7 +202,6 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
         pnlAutomatico2.setForeground(new java.awt.Color(51, 51, 51));
         pnlAutomatico2.setPreferredSize(new java.awt.Dimension(176, 48));
 
-        btn_CerrarCarton.setBackground(new java.awt.Color(255, 255, 255));
         btn_CerrarCarton.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         btn_CerrarCarton.setForeground(new java.awt.Color(255, 255, 255));
         btn_CerrarCarton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_precionado.png"))); // NOI18N
@@ -144,206 +239,106 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
                     .addContainerGap()))
         );
 
-        try {
-            txtNumCampo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo.setAutoscrolls(false);
-
-        try {
-            txtNumCampo1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo1.setAutoscrolls(false);
-
-        try {
-            txtNumCampo4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo4.setAutoscrolls(false);
-
-        try {
-            txtNumCampo5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo5.setAutoscrolls(false);
-
-        try {
-            txtNumCampo6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo6.setAutoscrolls(false);
-
-        try {
-            txtNumCampo2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtNumCampo2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         txtNumCampo2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNumCampo2.setAutoscrolls(false);
 
-        try {
-            txtNumCampo7.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo7.setAutoscrolls(false);
+        txtNumCampo1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo1.setAutoscrolls(false);
 
-        try {
-            txtNumCampo8.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo8.setAutoscrolls(false);
-
-        try {
-            txtNumCampo9.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo9.setAutoscrolls(false);
-
-        try {
-            txtNumCampo3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtNumCampo3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         txtNumCampo3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNumCampo3.setAutoscrolls(false);
 
-        try {
-            txtNumCampo10.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtNumCampo4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo4.setAutoscrolls(false);
+
+        txtNumCampo5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo5.setAutoscrolls(false);
+
+        txtNumCampo6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo6.setAutoscrolls(false);
+
+        txtNumCampo10.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         txtNumCampo10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNumCampo10.setAutoscrolls(false);
 
-        try {
-            txtNumCampo11.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo11.setAutoscrolls(false);
+        txtNumCampo9.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo9.setAutoscrolls(false);
 
-        try {
-            txtNumCampo12.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo12.setAutoscrolls(false);
+        txtNumCampo8.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo8.setAutoscrolls(false);
 
-        try {
-            txtNumCampo13.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo13.setAutoscrolls(false);
+        txtNumCampo7.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo7.setAutoscrolls(false);
 
-        try {
-            txtNumCampo14.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo14.setAutoscrolls(false);
-
-        try {
-            txtNumCampo15.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo15.setAutoscrolls(false);
-
-        try {
-            txtNumCampo16.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo16.setAutoscrolls(false);
-
-        txtNumCampo17.setEditable(false);
-        try {
-            txtNumCampo17.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo17.setAutoscrolls(false);
-
-        try {
-            txtNumCampo18.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo18.setAutoscrolls(false);
-
-        try {
-            txtNumCampo19.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtNumCampo19.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNumCampo19.setAutoscrolls(false);
-
-        try {
-            txtNumCampo20.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtNumCampo20.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         txtNumCampo20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNumCampo20.setAutoscrolls(false);
 
-        try {
-            txtNumCampo21.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtNumCampo19.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo19.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo19.setAutoscrolls(false);
+
+        txtNumCampo17.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo17.setAutoscrolls(false);
+
+        txtNumCampo18.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo18.setAutoscrolls(false);
+
+        txtNumCampo16.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo16.setAutoscrolls(false);
+
+        txtNumCampo11.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo11.setAutoscrolls(false);
+
+        txtNumCampo12.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo12.setAutoscrolls(false);
+
+        txtNumCampo13.setEditable(false);
+        txtNumCampo13.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo13.setAutoscrolls(false);
+
+        txtNumCampo14.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo14.setAutoscrolls(false);
+
+        txtNumCampo15.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo15.setAutoscrolls(false);
+
+        txtNumCampo21.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         txtNumCampo21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNumCampo21.setAutoscrolls(false);
 
-        try {
-            txtNumCampo22.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtNumCampo22.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         txtNumCampo22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNumCampo22.setAutoscrolls(false);
 
-        try {
-            txtNumCampo23.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtNumCampo23.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         txtNumCampo23.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNumCampo23.setAutoscrolls(false);
 
-        try {
-            txtNumCampo24.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtNumCampo24.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         txtNumCampo24.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNumCampo24.setAutoscrolls(false);
+
+        txtNumCampo25.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        txtNumCampo25.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumCampo25.setAutoscrolls(false);
 
         javax.swing.GroupLayout pnlManual1Layout = new javax.swing.GroupLayout(pnlManual1);
         pnlManual1.setLayout(pnlManual1Layout);
@@ -355,39 +350,39 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
                     .addComponent(pnlAutomatico2, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
                     .addGroup(pnlManual1Layout.createSequentialGroup()
                         .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNumCampo4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo5, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNumCampo9, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo8, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNumCampo3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo7, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNumCampo4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo5, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNumCampo17, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo18, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo15, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo16, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo19, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNumCampo13, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo11, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo14, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo12, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo8, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo9, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo7, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNumCampo10, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNumCampo22, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo13, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo14, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo11, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo12, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo15, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNumCampo18, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo19, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo16, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo17, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo20, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNumCampo23, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo20, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo24, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNumCampo21, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCampo24, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNumCampo22, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo25, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -397,59 +392,59 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlManual1Layout.createSequentialGroup()
-                        .addComponent(txtNumCampo2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNumCampo6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNumCampo3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNumCampo7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlManual1Layout.createSequentialGroup()
                         .addComponent(txtNumCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNumCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNumCampo2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlManual1Layout.createSequentialGroup()
-                        .addComponent(txtNumCampo14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNumCampo16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNumCampo17, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlManual1Layout.createSequentialGroup()
+                        .addComponent(txtNumCampo11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtNumCampo12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlManual1Layout.createSequentialGroup()
-                        .addComponent(txtNumCampo15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNumCampo21, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNumCampo16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlManual1Layout.createSequentialGroup()
-                        .addComponent(txtNumCampo20, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNumCampo21, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNumCampo22, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(pnlManual1Layout.createSequentialGroup()
-                            .addComponent(txtNumCampo9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(txtNumCampo8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtNumCampo7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnlManual1Layout.createSequentialGroup()
-                            .addComponent(txtNumCampo4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtNumCampo5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtNumCampo6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(pnlManual1Layout.createSequentialGroup()
-                            .addComponent(txtNumCampo13, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtNumCampo11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(txtNumCampo10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(pnlManual1Layout.createSequentialGroup()
-                            .addComponent(txtNumCampo17, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumCampo3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtNumCampo4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtNumCampo5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(pnlManual1Layout.createSequentialGroup()
                             .addComponent(txtNumCampo18, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtNumCampo19, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtNumCampo19, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtNumCampo20, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlManual1Layout.createSequentialGroup()
+                            .addComponent(txtNumCampo13, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtNumCampo14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtNumCampo15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlManual1Layout.createSequentialGroup()
-                        .addComponent(txtNumCampo22, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtNumCampo23, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNumCampo24, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNumCampo24, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNumCampo25, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlAutomatico2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -508,7 +503,8 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_CerrarCartonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CerrarCartonActionPerformed
-        // TODO add your handling code here:
+        CrearCartonManual();
+        limpiarCarton();
     }//GEN-LAST:event_btn_CerrarCartonActionPerformed
 
     /**
@@ -556,7 +552,6 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
     private javax.swing.JPanel pnlCarton;
     private javax.swing.JPanel pnlLetras;
     private javax.swing.JPanel pnlManual1;
-    private javax.swing.JFormattedTextField txtNumCampo;
     private javax.swing.JFormattedTextField txtNumCampo1;
     private javax.swing.JFormattedTextField txtNumCampo10;
     private javax.swing.JFormattedTextField txtNumCampo11;
@@ -574,6 +569,7 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
     private javax.swing.JFormattedTextField txtNumCampo22;
     private javax.swing.JFormattedTextField txtNumCampo23;
     private javax.swing.JFormattedTextField txtNumCampo24;
+    private javax.swing.JFormattedTextField txtNumCampo25;
     private javax.swing.JFormattedTextField txtNumCampo3;
     private javax.swing.JFormattedTextField txtNumCampo4;
     private javax.swing.JFormattedTextField txtNumCampo5;
