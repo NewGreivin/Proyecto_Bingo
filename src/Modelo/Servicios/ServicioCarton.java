@@ -43,4 +43,12 @@ public class ServicioCarton {
     public Collection<CartonBingo> obtenerCartones() {
         return repo.obtenerCartones();
     }
+    
+    public void marcarNumero(int numero) {
+        for (CartonBingo carton : repo.obtenerCartones()) {
+            if (carton.contieneNumero(numero)) {
+                carton.marcarNumero(numero);
+            }
+        }
+    }
 }
