@@ -1,18 +1,12 @@
 /**
  * @author Greivin
- * 
- * Fachada centralizada que gestiona todos los servicios
- * Proporciona un acceso único a la lógica del modelo desde cualquier interfaz gráfica
  */
 package Modelo.Facate;
 
-import Modelo.Cartones.CartonBingo;
 import Modelo.Servicios.ServicioCarton;
 import Modelo.Servicios.ServicioTablero;
 import Modelo.Servicios.ServicioStrategy;
 import Modelo.Servicios.ServicioTombola;
-import Modelo.Strategy.ReglaVictoria;
-import java.util.Collection;
 
 public class ServiciosFacate {
     private static ServiciosFacate instancia;
@@ -39,52 +33,5 @@ public class ServiciosFacate {
             instancia = new ServiciosFacate();
         }
         return instancia;
-    }
-
-    // ==================== MÉTODOS PARA CARTONES ====================
-    public CartonBingo crearCarton(boolean automatico, int[][] valores) {
-        return servicioCarton.crearCarton(automatico, valores);
-    }
-    public void eliminarCarton(String id) {
-        servicioCarton.eliminarCarton(id);
-    }
-    public Collection<CartonBingo> obtenerCartones() {
-        return servicioCarton.obtenerCartones();
-    }
-    public void marcarNumeroEnCartones(int numero) {
-        servicioCarton.marcarNumero(numero);
-    }
-
-    // ==================== MÉTODOS PARA TÓMBOLA ====================
-    public int generarNumeroTombola() {
-        return servicioTombola.generarAutomatico();
-    }
-    public boolean ingresarNumeroManual(int numero) {
-        return servicioTombola.ingresarManual(numero);
-    }
-    public void reiniciarTombola() {
-        servicioTombola.reiniciarTombola();
-    }
-
-    // ==================== MÉTODOS PARA TABLERO ====================
-    public void marcarNumeroTablero(int numero) {
-        servicioTablero.marcarNumero(numero);
-    }
-    public boolean[] obtenerEstadoTablero() {
-        return servicioTablero.obtenerEstado();
-    }
-    public void reiniciarTablero() {
-        servicioTablero.reiniciarTablero();
-    }
-
-    // ==================== MÉTODOS PARA ESTRATEGIA ====================
-    public void cambiarEstrategia(ReglaVictoria nuevaRegla) {
-        servicioStrategy.cambiarEstrategia(nuevaRegla);
-    }
-    public String obtenerNombreEstrategia() {
-        return servicioStrategy.obtenerNombreEstrategia();
-    }
-    public boolean esGanador(CartonBingo carton) {
-        return servicioStrategy.esGanador(carton);
     }
 }
