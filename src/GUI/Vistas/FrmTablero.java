@@ -1,0 +1,1222 @@
+/**
+ * @author Greivin
+ */
+package GUI.Vistas;
+
+public class FrmTablero extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmTablero.class.getName());
+    
+    public FrmTablero() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        pnlCarton = new javax.swing.JPanel();
+        pnlNumeros = new javax.swing.JPanel();
+        lbl_B = new javax.swing.JLabel();
+        lbl_I = new javax.swing.JLabel();
+        lbl_N = new javax.swing.JLabel();
+        lbl_G = new javax.swing.JLabel();
+        lbl_O = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        pnlCarton.setBackground(new java.awt.Color(238, 195, 154));
+        pnlCarton.setForeground(new java.awt.Color(238, 195, 154));
+
+        pnlNumeros.setBackground(new java.awt.Color(217, 160, 102));
+        pnlNumeros.setForeground(new java.awt.Color(217, 160, 102));
+        pnlNumeros.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbl_B.setBackground(new java.awt.Color(0, 0, 0));
+        lbl_B.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
+        lbl_B.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_B.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_B.setText("B");
+        pnlNumeros.add(lbl_B, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
+
+        lbl_I.setBackground(new java.awt.Color(0, 0, 0));
+        lbl_I.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
+        lbl_I.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_I.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_I.setText("I");
+        pnlNumeros.add(lbl_I, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+
+        lbl_N.setBackground(new java.awt.Color(0, 0, 0));
+        lbl_N.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
+        lbl_N.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_N.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_N.setText("N");
+        pnlNumeros.add(lbl_N, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        lbl_G.setBackground(new java.awt.Color(0, 0, 0));
+        lbl_G.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
+        lbl_G.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_G.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_G.setText("G");
+        pnlNumeros.add(lbl_G, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+
+        lbl_O.setBackground(new java.awt.Color(0, 0, 0));
+        lbl_O.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
+        lbl_O.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_O.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_O.setText("O");
+        pnlNumeros.add(lbl_O, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel1.setText("16");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 60, 60));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel2.setText("1");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 60, 60));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel3.setText("61");
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 60, 60));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel4.setText("31");
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 60, 60));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel5.setText("46");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 60, 60));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel6.setText("2");
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 60, 60));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel7.setText("17");
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 60, 60));
+
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel8.setText("32");
+        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 60, 60));
+
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel9.setText("47");
+        jLabel9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 60, 60));
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel10.setText("62");
+        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 60, 60));
+
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel11.setText("34");
+        jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 60, 60));
+
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel12.setText("64");
+        jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 60, 60));
+
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel13.setText("49");
+        jLabel13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 60, 60));
+
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel14.setText("4");
+        jLabel14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 60, 60));
+
+        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel15.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel15.setText("19");
+        jLabel15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 60, 60));
+
+        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel16.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel16.setText("3");
+        jLabel16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 60, 60));
+
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel17.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel17.setText("18");
+        jLabel17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 60, 60));
+
+        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel18.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel18.setText("33");
+        jLabel18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 60, 60));
+
+        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel19.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel19.setText("48");
+        jLabel19.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 60, 60));
+
+        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel20.setText("63");
+        jLabel20.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 60, 60));
+
+        jLabel21.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel21.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel21.setText("7");
+        jLabel21.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 60, 60));
+
+        jLabel22.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel22.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel22.setText("8");
+        jLabel22.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 60, 60));
+
+        jLabel23.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel23.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel23.setText("67");
+        jLabel23.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 60, 60));
+
+        jLabel24.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel24.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel24.setText("38");
+        jLabel24.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 60, 60));
+
+        jLabel25.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel25.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel25.setText("22");
+        jLabel25.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 60, 60));
+
+        jLabel26.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel26.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel26.setText("23");
+        jLabel26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 60, 60));
+
+        jLabel27.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel27.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel27.setText("52");
+        jLabel27.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 60, 60));
+
+        jLabel28.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel28.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel28.setText("68");
+        jLabel28.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 60, 60));
+
+        jLabel29.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel29.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel29.setText("53");
+        jLabel29.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 60, 60));
+
+        jLabel30.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel30.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel30.setText("37");
+        jLabel30.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 60, 60));
+
+        jLabel31.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel31.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel31.setText("5");
+        jLabel31.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 60, 60));
+
+        jLabel32.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel32.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel32.setText("6");
+        jLabel32.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 60, 60));
+
+        jLabel33.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel33.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel33.setText("21");
+        jLabel33.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 60, 60));
+
+        jLabel34.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel34.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel34.setText("20");
+        jLabel34.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 60, 60));
+
+        jLabel35.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel35.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel35.setText("35");
+        jLabel35.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 60, 60));
+
+        jLabel36.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel36.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel36.setText("36");
+        jLabel36.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 60, 60));
+
+        jLabel37.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel37.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel37.setText("50");
+        jLabel37.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 60, 60));
+
+        jLabel38.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel38.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel38.setText("51");
+        jLabel38.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 60, 60));
+
+        jLabel39.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel39.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel39.setText("65");
+        jLabel39.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 60, 60));
+
+        jLabel40.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel40.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel40.setText("66");
+        jLabel40.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 60, 60));
+
+        jLabel41.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel41.setText("1");
+        jLabel41.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 60, 60));
+
+        jLabel42.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel42.setText("1");
+        jLabel42.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 60, 60));
+
+        jLabel43.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel43.setText("1");
+        jLabel43.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 60, 60));
+
+        jLabel44.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel44.setText("1");
+        jLabel44.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 60, 60));
+
+        jLabel45.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel45.setText("1");
+        jLabel45.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 60, 60));
+
+        jLabel46.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel46.setText("1");
+        jLabel46.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 60, 60));
+
+        jLabel47.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel47.setText("1");
+        jLabel47.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 60, 60));
+
+        jLabel48.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel48.setText("1");
+        jLabel48.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 60, 60));
+
+        jLabel49.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel49.setText("1");
+        jLabel49.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 60, 60));
+
+        jLabel50.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel50.setText("1");
+        jLabel50.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 60, 60));
+
+        jLabel51.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel51.setText("1");
+        jLabel51.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 60, 60));
+
+        jLabel52.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel52.setText("1");
+        jLabel52.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 60, 60));
+
+        jLabel53.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel53.setText("1");
+        jLabel53.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 60, 60));
+
+        jLabel54.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel54.setText("1");
+        jLabel54.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 60, 60));
+
+        jLabel55.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel55.setText("1");
+        jLabel55.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 60, 60));
+
+        jLabel56.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel56.setText("1");
+        jLabel56.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 60, 60));
+
+        jLabel57.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel57.setText("1");
+        jLabel57.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 60, 60));
+
+        jLabel58.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel58.setText("1");
+        jLabel58.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 60, 60));
+
+        jLabel59.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel59.setText("1");
+        jLabel59.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 60, 60));
+
+        jLabel60.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel60.setText("1");
+        jLabel60.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 60, 60));
+
+        jLabel61.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel61.setText("1");
+        jLabel61.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 60, 60));
+
+        jLabel62.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel62.setText("1");
+        jLabel62.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 60, 60));
+
+        jLabel63.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel63.setText("1");
+        jLabel63.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 60, 60));
+
+        jLabel64.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel64.setText("1");
+        jLabel64.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 60, 60));
+
+        jLabel65.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel65.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel65.setText("1");
+        jLabel65.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 60, 60));
+
+        jLabel66.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel66.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel66.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel66.setText("1");
+        jLabel66.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 60, 60));
+
+        jLabel67.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel67.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel67.setText("1");
+        jLabel67.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 60, 60));
+
+        jLabel68.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel68.setText("1");
+        jLabel68.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 60, 60));
+
+        jLabel69.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel69.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel69.setText("1");
+        jLabel69.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 60, 60));
+
+        jLabel70.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel70.setText("1");
+        jLabel70.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 60, 60));
+
+        jLabel71.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel71.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel71.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel71.setText("58");
+        jLabel71.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, 60, 60));
+
+        jLabel72.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel72.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel72.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel72.setText("54");
+        jLabel72.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 60, 60));
+
+        jLabel73.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel73.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel73.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel73.setText("39");
+        jLabel73.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 60, 60));
+
+        jLabel74.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel74.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel74.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel74.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel74.setText("24");
+        jLabel74.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 60, 60));
+
+        jLabel75.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel75.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel75.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel75.setText("9");
+        jLabel75.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 60, 60));
+
+        jLabel76.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel76.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel76.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel76.setText("10");
+        jLabel76.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 60, 60));
+
+        jLabel77.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel77.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel77.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel77.setText("25");
+        jLabel77.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, 60, 60));
+
+        jLabel78.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel78.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel78.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel78.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel78.setText("40");
+        jLabel78.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, 60, 60));
+
+        jLabel79.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel79.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel79.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel79.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel79.setText("55");
+        jLabel79.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, 60, 60));
+
+        jLabel80.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel80.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel80.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel80.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel80.setText("69");
+        jLabel80.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, 60, 60));
+
+        jLabel81.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel81.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel81.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel81.setText("70");
+        jLabel81.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, 60, 60));
+
+        jLabel82.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel82.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel82.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel82.setText("11");
+        jLabel82.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, 60, 60));
+
+        jLabel83.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel83.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel83.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel83.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel83.setText("12");
+        jLabel83.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, 60, 60));
+
+        jLabel84.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel84.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel84.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel84.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel84.setText("13");
+        jLabel84.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 60, 60));
+
+        jLabel85.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel85.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel85.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel85.setText("28");
+        jLabel85.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 60, 60, 60));
+
+        jLabel86.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel86.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel86.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel86.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel86.setText("26");
+        jLabel86.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 60, 60, 60));
+
+        jLabel87.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel87.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel87.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel87.setText("27");
+        jLabel87.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 60, 60, 60));
+
+        jLabel88.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel88.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel88.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel88.setText("41");
+        jLabel88.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 60, 60));
+
+        jLabel89.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel89.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel89.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel89.setText("42");
+        jLabel89.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 120, 60, 60));
+
+        jLabel90.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel90.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel90.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel90.setText("43");
+        jLabel90.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 120, 60, 60));
+
+        jLabel91.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel91.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel91.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel91.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel91.setText("56");
+        jLabel91.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, 60, 60));
+
+        jLabel92.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel92.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel92.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel92.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel92.setText("57");
+        jLabel92.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, 60, 60));
+
+        jLabel93.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel93.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel93.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel93.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel93.setText("71");
+        jLabel93.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 60, 60));
+
+        jLabel94.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel94.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel94.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel94.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel94.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel94.setText("72");
+        jLabel94.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 240, 60, 60));
+
+        jLabel95.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel95.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel95.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel95.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel95.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel95.setText("73");
+        jLabel95.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, 60, 60));
+
+        jLabel96.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel96.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel96.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel96.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel96.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel96.setText("14");
+        jLabel96.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 0, 60, 60));
+
+        jLabel97.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel97.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel97.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel97.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel97.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel97.setText("29");
+        jLabel97.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 60, 60, 60));
+
+        jLabel98.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel98.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel98.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel98.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel98.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel98.setText("44");
+        jLabel98.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 120, 60, 60));
+
+        jLabel99.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel99.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel99.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel99.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel99.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel99.setText("59");
+        jLabel99.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 180, 60, 60));
+
+        jLabel100.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel100.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel100.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel100.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel100.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel100.setText("74");
+        jLabel100.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 240, 60, 60));
+
+        jLabel101.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel101.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel101.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel101.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel101.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel101.setText("15");
+        jLabel101.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, 60, 60));
+
+        jLabel102.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel102.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel102.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel102.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel102.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel102.setText("30");
+        jLabel102.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 60, 60, 60));
+
+        jLabel103.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel103.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel103.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel103.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel103.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel103.setText("45");
+        jLabel103.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 120, 60, 60));
+
+        jLabel104.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel104.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel104.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel104.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel104.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel104.setText("60");
+        jLabel104.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 180, 60, 60));
+
+        jLabel105.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel105.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel105.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel105.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel105.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        jLabel105.setText("75");
+        jLabel105.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNumeros.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 240, 60, 60));
+
+        javax.swing.GroupLayout pnlCartonLayout = new javax.swing.GroupLayout(pnlCarton);
+        pnlCarton.setLayout(pnlCartonLayout);
+        pnlCartonLayout.setHorizontalGroup(
+            pnlCartonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlNumeros, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlCartonLayout.setVerticalGroup(
+            pnlCartonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCartonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlCarton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlCarton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    public static void main(String args[]) {
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        java.awt.EventQueue.invokeLater(() -> new FrmTablero().setVisible(true));
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
+    private javax.swing.JLabel lbl_B;
+    private javax.swing.JLabel lbl_G;
+    private javax.swing.JLabel lbl_I;
+    private javax.swing.JLabel lbl_N;
+    private javax.swing.JLabel lbl_O;
+    private javax.swing.JPanel pnlCarton;
+    private javax.swing.JPanel pnlNumeros;
+    // End of variables declaration//GEN-END:variables
+}

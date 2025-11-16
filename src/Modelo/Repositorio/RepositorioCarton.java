@@ -13,17 +13,9 @@ import java.util.HashMap;
  * @author Ricardo Chaves
  */
 public class RepositorioCarton {
-    private static RepositorioCarton instancia; 
     private HashMap<String, CartonBingo> cartones;
-
-    public static RepositorioCarton getInstancia() {
-        if (instancia == null) {
-            instancia = new RepositorioCarton();
-        }
-        return instancia;
-    }
     
-    private RepositorioCarton() {
+    public RepositorioCarton() {
         cartones = new HashMap<>();
     }
     

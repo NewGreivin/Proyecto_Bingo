@@ -14,7 +14,11 @@ import java.util.Collection;
  * @author Ricardo Chaves
  */
 public class ServicioCarton {
-    private final RepositorioCarton repo = RepositorioCarton.getInstancia();
+    private final RepositorioCarton repo;
+
+    public ServicioCarton() {
+        this.repo = new RepositorioCarton();
+    }
     
     public CartonBingo crearCarton(boolean automatico, int valores[][]){
         
