@@ -1,33 +1,17 @@
 package Controladores;
 
-import Modelo.Servicios.ServicioTablero;
+import Modelo.Facate.ServiciosFacate;
 import Modelo.Tombolas.TombolaObserver;
 
 public class ControladorTablero implements TombolaObserver {
-    private final ServicioTablero servicioTablero;
+    private final ServiciosFacate facate;
 
     public ControladorTablero() {
-        this.servicioTablero = new ServicioTablero();
+        this.facate = ServiciosFacate.getInstancia();
     }
-
+    
     @Override
-    public void actualizarNumero(int numero) {
-        try {
-            servicioTablero.marcarNumero(numero);
-        } catch (RuntimeException ex) {
-            System.err.println("Error al actualizar tablero con número " + numero + ": " + ex.getMessage());
-        }
-    }
-
-    public void marcarNumero(int numero) {
-        servicioTablero.marcarNumero(numero);
-    }
-
-    public boolean[] obtenerEstado() {
-        return servicioTablero.obtenerEstado();
-    }
-
-    public void reiniciarTablero() {
-        servicioTablero.reiniciarTablero();
-    }
+    public void actualizarNumero(int numero) { facate.getServicioTablero().marcarNumero(numero); }
+    public boolean[] obtenerEstado() { return facate.getServicioTablero().obtenerEstado(); }
+    public void reiniciarTablero() { facate.getServicioTablero().reiniciarTablero(); }
 }
