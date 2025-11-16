@@ -4,19 +4,80 @@
  */
 package GUI.Vistas;
 
+import Controladores.ControladorCarton;
+import Modelo.Cartones.CartonBingo;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author Greivin
  */
 public class PnlCarton extends javax.swing.JPanel {
-
+    private ControladorCarton carton;
+    private JToggleButton[][] botones;
     /**
      * Creates new form PnlCarton
      */
     public PnlCarton() {
         initComponents();
+        botones = new JToggleButton[][] {
+        {btn_1, btn_6,  btn_11, btn_16, btn_21},
+        {btn_2, btn_7,  btn_12, btn_17, btn_22},
+        {btn_3, btn_8,  btn_13, btn_18, btn_23},
+        {btn_4, btn_9,  btn_14, btn_19, btn_24},
+        {btn_5, btn_10, btn_15, btn_20, btn_25}
+        };
     }
 
+    public void mostrarCarton(CartonBingo carton) {
+
+    int[][] numeros = carton.getNumero();
+    boolean[][] marcados = carton.getMarcados();
+
+    lbl_NumCarton.setText(carton.getId());
+
+        for (int fila = 0; fila < 5; fila++) {
+            for (int col = 0; col < 5; col++) {
+
+                JToggleButton btn = botones[fila][col];
+
+                // Centro libre
+                if (fila == 2 && col == 2) {
+                    btn.setText("X");
+                    btn.setSelected(true);  // siempre marcado
+                    continue;
+                }
+
+                btn.setText(String.valueOf(numeros[fila][col]));
+
+                // Si está marcado → seleccionado
+                btn.setSelected(marcados[fila][col]);
+            }
+        }
+    MarcarDesmarcar(carton);
+    }
+    
+    private void MarcarDesmarcar(CartonBingo carton) {
+        for (int fila = 0; fila < 5; fila++) {
+            for (int col = 0; col < 5; col++) {
+
+                final int f = fila;
+                final int c = col;
+
+                botones[f][c].addActionListener(e -> {
+
+                if (f == 2 && c == 2) return; // centro libre NO cambia
+
+                int numero = carton.getNumero()[f][c];
+
+                if (botones[f][c].isSelected())
+                    carton.marcarNumero(numero);
+                else
+                    carton.desmarcarNumero(numero);
+                });
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,7 +113,7 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_23 = new javax.swing.JToggleButton();
         btn_24 = new javax.swing.JToggleButton();
         btn_25 = new javax.swing.JToggleButton();
-        btn_26 = new javax.swing.JToggleButton();
+        btn_5 = new javax.swing.JToggleButton();
         pnlLetras = new javax.swing.JPanel();
         lbl_I = new javax.swing.JLabel();
         lbl_N = new javax.swing.JLabel();
@@ -70,7 +131,6 @@ public class PnlCarton extends javax.swing.JPanel {
         pnlNumeros.setForeground(new java.awt.Color(217, 160, 102));
         pnlNumeros.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_2.setBackground(new java.awt.Color(255, 255, 255));
         btn_2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_2.setForeground(new java.awt.Color(255, 255, 255));
         btn_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -82,7 +142,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 60, 60));
 
-        btn_1.setBackground(new java.awt.Color(255, 255, 255));
         btn_1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_1.setForeground(new java.awt.Color(255, 255, 255));
         btn_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -92,9 +151,13 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_Transcicion.png"))); // NOI18N
         btn_1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
+        btn_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_1ActionPerformed(evt);
+            }
+        });
         pnlNumeros.add(btn_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 60));
 
-        btn_3.setBackground(new java.awt.Color(255, 255, 255));
         btn_3.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_3.setForeground(new java.awt.Color(255, 255, 255));
         btn_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -106,7 +169,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 60, 60));
 
-        btn_4.setBackground(new java.awt.Color(255, 255, 255));
         btn_4.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_4.setForeground(new java.awt.Color(255, 255, 255));
         btn_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -118,7 +180,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 60, 60));
 
-        btn_6.setBackground(new java.awt.Color(255, 255, 255));
         btn_6.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_6.setForeground(new java.awt.Color(255, 255, 255));
         btn_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -130,7 +191,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 60, 60));
 
-        btn_7.setBackground(new java.awt.Color(255, 255, 255));
         btn_7.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_7.setForeground(new java.awt.Color(255, 255, 255));
         btn_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -142,7 +202,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_7.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 60, 60));
 
-        btn_8.setBackground(new java.awt.Color(255, 255, 255));
         btn_8.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_8.setForeground(new java.awt.Color(255, 255, 255));
         btn_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -154,7 +213,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_8.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 60, 60));
 
-        btn_9.setBackground(new java.awt.Color(255, 255, 255));
         btn_9.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_9.setForeground(new java.awt.Color(255, 255, 255));
         btn_9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -166,7 +224,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_9.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 60, 60));
 
-        btn_10.setBackground(new java.awt.Color(255, 255, 255));
         btn_10.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_10.setForeground(new java.awt.Color(255, 255, 255));
         btn_10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -178,7 +235,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 60, 60));
 
-        btn_11.setBackground(new java.awt.Color(255, 255, 255));
         btn_11.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_11.setForeground(new java.awt.Color(255, 255, 255));
         btn_11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -190,7 +246,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_11.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 60, 60));
 
-        btn_12.setBackground(new java.awt.Color(255, 255, 255));
         btn_12.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_12.setForeground(new java.awt.Color(255, 255, 255));
         btn_12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -202,7 +257,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_12.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 60, 60));
 
-        btn_13.setBackground(new java.awt.Color(255, 255, 255));
         btn_13.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_13.setForeground(new java.awt.Color(255, 255, 255));
         btn_13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -215,7 +269,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_13.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 60, 60));
 
-        btn_14.setBackground(new java.awt.Color(255, 255, 255));
         btn_14.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_14.setForeground(new java.awt.Color(255, 255, 255));
         btn_14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -227,7 +280,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_14.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 60, 60));
 
-        btn_15.setBackground(new java.awt.Color(255, 255, 255));
         btn_15.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_15.setForeground(new java.awt.Color(255, 255, 255));
         btn_15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -239,7 +291,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_15.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 60, 60));
 
-        btn_16.setBackground(new java.awt.Color(255, 255, 255));
         btn_16.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_16.setForeground(new java.awt.Color(255, 255, 255));
         btn_16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -251,7 +302,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_16.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 60, 60));
 
-        btn_17.setBackground(new java.awt.Color(255, 255, 255));
         btn_17.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_17.setForeground(new java.awt.Color(255, 255, 255));
         btn_17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -263,7 +313,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_17.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_17, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 60, 60));
 
-        btn_18.setBackground(new java.awt.Color(255, 255, 255));
         btn_18.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_18.setForeground(new java.awt.Color(255, 255, 255));
         btn_18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -275,7 +324,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_18.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_18, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 60, 60));
 
-        btn_19.setBackground(new java.awt.Color(255, 255, 255));
         btn_19.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_19.setForeground(new java.awt.Color(255, 255, 255));
         btn_19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -285,9 +333,13 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_19.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_19.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_Transcicion.png"))); // NOI18N
         btn_19.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
+        btn_19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_19ActionPerformed(evt);
+            }
+        });
         pnlNumeros.add(btn_19, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 60, 60));
 
-        btn_20.setBackground(new java.awt.Color(255, 255, 255));
         btn_20.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_20.setForeground(new java.awt.Color(255, 255, 255));
         btn_20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -299,7 +351,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_20.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_20, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 60, 60));
 
-        btn_21.setBackground(new java.awt.Color(255, 255, 255));
         btn_21.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_21.setForeground(new java.awt.Color(255, 255, 255));
         btn_21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -311,7 +362,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_21.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_21, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 60, 60));
 
-        btn_22.setBackground(new java.awt.Color(255, 255, 255));
         btn_22.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_22.setForeground(new java.awt.Color(255, 255, 255));
         btn_22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -323,7 +373,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_22.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_22, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 60, 60));
 
-        btn_23.setBackground(new java.awt.Color(255, 255, 255));
         btn_23.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_23.setForeground(new java.awt.Color(255, 255, 255));
         btn_23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -335,7 +384,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_23.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_23, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 60, 60));
 
-        btn_24.setBackground(new java.awt.Color(255, 255, 255));
         btn_24.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_24.setForeground(new java.awt.Color(255, 255, 255));
         btn_24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -347,7 +395,6 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_24.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 60, 60));
 
-        btn_25.setBackground(new java.awt.Color(255, 255, 255));
         btn_25.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         btn_25.setForeground(new java.awt.Color(255, 255, 255));
         btn_25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
@@ -359,48 +406,42 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_25.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
         pnlNumeros.add(btn_25, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 60, 60));
 
-        btn_26.setBackground(new java.awt.Color(255, 255, 255));
-        btn_26.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
-        btn_26.setForeground(new java.awt.Color(255, 255, 255));
-        btn_26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
-        btn_26.setBorderPainted(false);
-        btn_26.setContentAreaFilled(false);
-        btn_26.setFocusPainted(false);
-        btn_26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_26.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_Transcicion.png"))); // NOI18N
-        btn_26.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
-        pnlNumeros.add(btn_26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 60, 60));
+        btn_5.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        btn_5.setForeground(new java.awt.Color(255, 255, 255));
+        btn_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo.png"))); // NOI18N
+        btn_5.setBorderPainted(false);
+        btn_5.setContentAreaFilled(false);
+        btn_5.setFocusPainted(false);
+        btn_5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_Transcicion.png"))); // NOI18N
+        btn_5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
+        pnlNumeros.add(btn_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 60, 60));
 
         pnlLetras.setBackground(new java.awt.Color(217, 160, 102));
         pnlLetras.setForeground(new java.awt.Color(217, 160, 102));
 
         lbl_I.setBackground(new java.awt.Color(0, 0, 0));
         lbl_I.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
-        lbl_I.setForeground(new java.awt.Color(0, 0, 0));
         lbl_I.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_I.setText("I");
 
         lbl_N.setBackground(new java.awt.Color(0, 0, 0));
         lbl_N.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
-        lbl_N.setForeground(new java.awt.Color(0, 0, 0));
         lbl_N.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_N.setText("N");
 
         lbl_G.setBackground(new java.awt.Color(0, 0, 0));
         lbl_G.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
-        lbl_G.setForeground(new java.awt.Color(0, 0, 0));
         lbl_G.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_G.setText("G");
 
         lbl_O.setBackground(new java.awt.Color(0, 0, 0));
         lbl_O.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
-        lbl_O.setForeground(new java.awt.Color(0, 0, 0));
         lbl_O.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_O.setText("O");
 
         lbl_B1.setBackground(new java.awt.Color(0, 0, 0));
         lbl_B1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
-        lbl_B1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_B1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_B1.setText("B");
 
@@ -436,7 +477,6 @@ public class PnlCarton extends javax.swing.JPanel {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        btn_CerrarCarton.setBackground(new java.awt.Color(255, 255, 255));
         btn_CerrarCarton.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         btn_CerrarCarton.setForeground(new java.awt.Color(255, 255, 255));
         btn_CerrarCarton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Cerrar.png"))); // NOI18N
@@ -447,16 +487,19 @@ public class PnlCarton extends javax.swing.JPanel {
         btn_CerrarCarton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_CerrarCarton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_Transcicion.png"))); // NOI18N
         btn_CerrarCarton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Campo_Bingo_positivo.png"))); // NOI18N
+        btn_CerrarCarton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CerrarCartonActionPerformed(evt);
+            }
+        });
 
         lbl_B.setBackground(new java.awt.Color(0, 0, 0));
         lbl_B.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
-        lbl_B.setForeground(new java.awt.Color(0, 0, 0));
         lbl_B.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_B.setText("Carton #:");
 
         lbl_NumCarton.setBackground(new java.awt.Color(0, 0, 0));
         lbl_NumCarton.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
-        lbl_NumCarton.setForeground(new java.awt.Color(0, 0, 0));
         lbl_NumCarton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_NumCarton.setText("1");
 
@@ -506,6 +549,20 @@ public class PnlCarton extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_CerrarCartonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CerrarCartonActionPerformed
+        String id = lbl_NumCarton.getText();
+        carton.eliminarCarton(id); // tu método eliminar
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_CerrarCartonActionPerformed
+
+    private void btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_1ActionPerformed
+
+    private void btn_19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_19ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btn_1;
@@ -526,9 +583,9 @@ public class PnlCarton extends javax.swing.JPanel {
     private javax.swing.JToggleButton btn_23;
     private javax.swing.JToggleButton btn_24;
     private javax.swing.JToggleButton btn_25;
-    private javax.swing.JToggleButton btn_26;
     private javax.swing.JToggleButton btn_3;
     private javax.swing.JToggleButton btn_4;
+    private javax.swing.JToggleButton btn_5;
     private javax.swing.JToggleButton btn_6;
     private javax.swing.JToggleButton btn_7;
     private javax.swing.JToggleButton btn_8;

@@ -6,6 +6,7 @@ package Controladores;
 
 import Modelo.Cartones.CartonBingo;
 import Modelo.Servicios.ServicioCarton;
+import java.util.Collection;
 
 /**
  *
@@ -26,7 +27,7 @@ public class ControladorCarton {
         return nuevo;
     }
     
-    public void ingresarNumeroManual(String id){
+    public void eliminarCarton(String id){
             servicio.eliminarCarton(id);
     }
     
@@ -36,5 +37,9 @@ public class ControladorCarton {
                 carton.marcarNumero(numero);
             }
         }
+    }
+    
+    public Collection<CartonBingo> obtenerCartones() {
+        return servicio.obtenerCartones();
     }
 }
