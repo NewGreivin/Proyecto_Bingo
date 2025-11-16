@@ -21,7 +21,7 @@ public class ControladorCarton {
     }
     
     public CartonBingo CrearCarton(boolean automatico, int[][] valores){
-        CartonBingo nuevo = servicio.crearCarton(automatico, valores);
+        CartonBingo nuevo = servicio.getServicioCarton().crearCarton(automatico, valores);
         if (nuevo == null){
             throw new IllegalArgumentException("No se pudo crear el carton");
         } 
@@ -29,11 +29,11 @@ public class ControladorCarton {
     }
     
     public void eliminarCarton(String id){
-            servicio.eliminarCarton(id);
+            servicio.getServicioCarton().eliminarCarton(id);
     }
     
     public void marcarNumero(int numero){
-        for (CartonBingo carton : servicio.obtenerCartones()) {
+        for (CartonBingo carton : servicio.getServicioCarton().obtenerCartones()) {
             if (carton.contieneNumero(numero)) {
                 carton.marcarNumero(numero);
             }
@@ -41,6 +41,6 @@ public class ControladorCarton {
     }
     
     public Collection<CartonBingo> obtenerCartones() {
-        return servicio.obtenerCartones();
+        return servicio.getServicioCarton().obtenerCartones();
     }
 }
