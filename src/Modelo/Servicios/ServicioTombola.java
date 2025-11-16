@@ -12,10 +12,10 @@ import Modelo.Tombolas.Tombola;
  * @author Marisol Alfaro
  */
 public class ServicioTombola {
-    private RepositorioTombola repositorio;
+    private final RepositorioTombola repositorio;
 
-    public ServicioTombola(RepositorioTombola repositorio) {
-        this.repositorio = repositorio;
+    public ServicioTombola() {
+        this.repositorio = new RepositorioTombola();
     }
     
     public boolean ingresarManual(int numero) {

@@ -4,7 +4,9 @@
  */
 package Modelo.Servicios;
 
+import Modelo.Cartones.CartonBingo;
 import Modelo.Strategy.ReglaVictoria;
+import Modelo.Strategy.VictoriaNormal;
 
 /**
  *
@@ -12,6 +14,10 @@ import Modelo.Strategy.ReglaVictoria;
  */
 public class ServicioStrategy {
     private ReglaVictoria estrategiaActual;
+    
+    public ServicioStrategy() {
+        this.estrategiaActual = new VictoriaNormal();
+    }
     
     public ServicioStrategy(ReglaVictoria estrategiaInicial) {
         this.estrategiaActual = estrategiaInicial;
@@ -27,5 +33,9 @@ public class ServicioStrategy {
     
     public ReglaVictoria getEstrategiaActual() {
         return estrategiaActual;
+    }
+    
+    public boolean esGanador(CartonBingo carton) {
+        return estrategiaActual.esGanador(carton);
     }
 }
