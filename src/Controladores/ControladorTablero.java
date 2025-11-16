@@ -1,37 +1,33 @@
 package Controladores;
 
-import GUI.Vistas.PnlTablero;
+import Modelo.Servicios.ServicioTablero;
 import Modelo.Tombolas.TombolaObserver;
 
 public class ControladorTablero implements TombolaObserver {
-    private final ControladorJuego controladorJuego;
-    private final ControladorTombola controladorTombola;
-    private final PnlTablero pnlTablero;
+    private final ServicioTablero servicioTablero;
 
-    public ControladorTablero(ControladorJuego controladorJuego,
-                              ControladorTombola controladorTombola,
-                              PnlTablero pnlTablero) {
-        this.controladorJuego = controladorJuego;
-        this.controladorTombola = controladorTombola;
-        this.pnlTablero = pnlTablero;
-
-        // Se registra como observador de la tómbola
-        this.controladorTombola.agregarObserver(this);
+    public ControladorTablero() {
+        this.servicioTablero = new ServicioTablero();
     }
 
     @Override
     public void actualizarNumero(int numero) {
         try {
-            controladorJuego.aplicarNumero(numero);
-            pnlTablero.marcarNumero(numero);
+            servicioTablero.marcarNumero(numero);
         } catch (RuntimeException ex) {
             System.err.println("Error al actualizar tablero con número " + numero + ": " + ex.getMessage());
         }
     }
 
-    public void reiniciarJuegoCompleto() {
-        controladorJuego.reiniciarJuego(); 
-        pnlTablero.limpiarTablero();       
+    public void marcarNumero(int numero) {
+        servicioTablero.marcarNumero(numero);
     }
 
+    public boolean[] obtenerEstado() {
+        return servicioTablero.obtenerEstado();
+    }
+
+    public void reiniciarTablero() {
+        servicioTablero.reiniciarTablero();
+    }
 }

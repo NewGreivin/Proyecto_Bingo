@@ -5,6 +5,7 @@
 package Controladores;
 
 import Modelo.Tombolas.Tombola;
+import Modelo.Tombolas.TombolaObserver;
 
 /**
  *
@@ -34,5 +35,9 @@ public class ControladorTombola {
             return -1;
         }
         return ultimo;
+    }
+    
+    public void agregarObserver(TombolaObserver observer) {
+        tombola.agregarObserver(observer);
     }
 }
