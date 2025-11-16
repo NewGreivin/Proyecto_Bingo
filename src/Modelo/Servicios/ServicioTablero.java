@@ -7,7 +7,7 @@ import Modelo.Repositorio.RepositorioTablero;
 import Modelo.Tableros.TableroNumeros;
 
 public class ServicioTablero {
-    private final RepositorioTablero repo;
+    private RepositorioTablero repo;
 
     public void marcarNumero(int numero) {
         TableroNumeros tablero = repo.obtenerTablero();
@@ -23,6 +23,6 @@ public class ServicioTablero {
     }
 
     public ServicioTablero() {
-        this.repo = RepositorioTablero.getInstancia();
+        this.repo = new RepositorioTablero();
     }
 }
