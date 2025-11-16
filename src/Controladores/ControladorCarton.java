@@ -5,7 +5,8 @@
 package Controladores;
 
 import Modelo.Cartones.CartonBingo;
-import Modelo.Servicios.ServicioCarton;
+import Modelo.Facate.ServiciosFacate;
+
 import java.util.Collection;
 
 /**
@@ -13,10 +14,10 @@ import java.util.Collection;
  * @author Ricardo Chaves
  */
 public class ControladorCarton {
-    private ServicioCarton servicio;
+    private ServiciosFacate servicio;
 
     public ControladorCarton() {
-        this.servicio = new ServicioCarton();
+        this.servicio = ServiciosFacate.getInstancia();
     }
     
     public CartonBingo CrearCarton(boolean automatico, int[][] valores){
