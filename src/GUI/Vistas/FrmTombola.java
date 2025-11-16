@@ -19,11 +19,6 @@ public class FrmTombola extends javax.swing.JFrame {
         pnlLetras = new javax.swing.JPanel();
         lbl_B1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        pnlModos = new javax.swing.JPanel();
-        pnlAutomatico = new javax.swing.JPanel();
-        btnAutomatico = new javax.swing.JToggleButton();
-        pnlManual = new javax.swing.JPanel();
-        btnManual = new javax.swing.JToggleButton();
         pnlAutomatico1 = new javax.swing.JPanel();
         txtIngresarNumero = new javax.swing.JTextField();
         pnlManual1 = new javax.swing.JPanel();
@@ -58,7 +53,7 @@ public class FrmTombola extends javax.swing.JFrame {
             .addGroup(pnlLetrasLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(lbl_B1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         pnlLetrasLayout.setVerticalGroup(
             pnlLetrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,106 +66,6 @@ public class FrmTombola extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(217, 160, 102));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 195, 154), 3, true));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
-
-        pnlModos.setBackground(new java.awt.Color(217, 160, 102));
-        pnlModos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 195, 154), 3, true));
-        pnlModos.setForeground(new java.awt.Color(51, 51, 51));
-
-        pnlAutomatico.setBackground(new java.awt.Color(217, 160, 102));
-        pnlAutomatico.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 195, 154), 3, true));
-        pnlAutomatico.setForeground(new java.awt.Color(51, 51, 51));
-        pnlAutomatico.setPreferredSize(new java.awt.Dimension(176, 48));
-
-        btnAutomatico.setBackground(new java.awt.Color(255, 255, 255));
-        btnAutomatico.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        btnAutomatico.setForeground(new java.awt.Color(255, 255, 255));
-        btnAutomatico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_NO_precionado.png"))); // NOI18N
-        btnAutomatico.setText("Automatico");
-        btnAutomatico.setBorderPainted(false);
-        btnAutomatico.setContentAreaFilled(false);
-        btnAutomatico.setFocusPainted(false);
-        btnAutomatico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAutomatico.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_Focus_precionado.png"))); // NOI18N
-        btnAutomatico.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_precionado.png"))); // NOI18N
-
-        javax.swing.GroupLayout pnlAutomaticoLayout = new javax.swing.GroupLayout(pnlAutomatico);
-        pnlAutomatico.setLayout(pnlAutomaticoLayout);
-        pnlAutomaticoLayout.setHorizontalGroup(
-            pnlAutomaticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 152, Short.MAX_VALUE)
-            .addGroup(pnlAutomaticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlAutomaticoLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(btnAutomatico)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        pnlAutomaticoLayout.setVerticalGroup(
-            pnlAutomaticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 49, Short.MAX_VALUE)
-            .addGroup(pnlAutomaticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAutomaticoLayout.createSequentialGroup()
-                    .addGap(4, 4, 4)
-                    .addComponent(btnAutomatico, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-
-        pnlManual.setBackground(new java.awt.Color(217, 160, 102));
-        pnlManual.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 195, 154), 3, true));
-        pnlManual.setForeground(new java.awt.Color(51, 51, 51));
-
-        btnManual.setBackground(new java.awt.Color(255, 255, 255));
-        btnManual.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        btnManual.setForeground(new java.awt.Color(255, 255, 255));
-        btnManual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_NO_precionado.png"))); // NOI18N
-        btnManual.setText("Manual");
-        btnManual.setBorderPainted(false);
-        btnManual.setContentAreaFilled(false);
-        btnManual.setFocusPainted(false);
-        btnManual.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnManual.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_Focus_precionado.png"))); // NOI18N
-        btnManual.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_precionado.png"))); // NOI18N
-
-        javax.swing.GroupLayout pnlManualLayout = new javax.swing.GroupLayout(pnlManual);
-        pnlManual.setLayout(pnlManualLayout);
-        pnlManualLayout.setHorizontalGroup(
-            pnlManualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 152, Short.MAX_VALUE)
-            .addGroup(pnlManualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlManualLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(btnManual)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        pnlManualLayout.setVerticalGroup(
-            pnlManualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(pnlManualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlManualLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(btnManual, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-
-        javax.swing.GroupLayout pnlModosLayout = new javax.swing.GroupLayout(pnlModos);
-        pnlModos.setLayout(pnlModosLayout);
-        pnlModosLayout.setHorizontalGroup(
-            pnlModosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlModosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlAutomatico, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(pnlManual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlModosLayout.setVerticalGroup(
-            pnlModosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlModosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlModosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(pnlManual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlAutomatico, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
-                .addContainerGap())
-        );
 
         pnlAutomatico1.setBackground(new java.awt.Color(217, 160, 102));
         pnlAutomatico1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 195, 154), 3, true));
@@ -197,7 +92,7 @@ public class FrmTombola extends javax.swing.JFrame {
         );
         pnlAutomatico1Layout.setVerticalGroup(
             pnlAutomatico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 147, Short.MAX_VALUE)
             .addGroup(pnlAutomatico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlAutomatico1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -289,7 +184,7 @@ public class FrmTombola extends javax.swing.JFrame {
                 .addGroup(pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnlManual2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnlManual3, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         pnlManual1Layout.setVerticalGroup(
             pnlManual1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,7 +193,7 @@ public class FrmTombola extends javax.swing.JFrame {
                 .addComponent(pnlManual2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlManual3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlAutomatico2.setBackground(new java.awt.Color(217, 160, 102));
@@ -337,7 +232,7 @@ public class FrmTombola extends javax.swing.JFrame {
             pnlManual4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlManual4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -376,26 +271,22 @@ public class FrmTombola extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnlAutomatico2, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(pnlModos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(pnlAutomatico1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(pnlManual1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(pnlAutomatico1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(pnlManual1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlModos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnlManual1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlAutomatico1, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE))
+                    .addComponent(pnlAutomatico1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlAutomatico2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlCartonLayout = new javax.swing.GroupLayout(pnlCarton);
@@ -453,25 +344,20 @@ public class FrmTombola extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnAutomatico;
     private javax.swing.JButton btnCantar;
     private javax.swing.JButton btnGenerar;
-    private javax.swing.JToggleButton btnManual;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lbl_B1;
-    private javax.swing.JPanel pnlAutomatico;
     private javax.swing.JPanel pnlAutomatico1;
     private javax.swing.JPanel pnlAutomatico2;
     private javax.swing.JPanel pnlCarton;
     private javax.swing.JPanel pnlLetras;
-    private javax.swing.JPanel pnlManual;
     private javax.swing.JPanel pnlManual1;
     private javax.swing.JPanel pnlManual2;
     private javax.swing.JPanel pnlManual3;
     private javax.swing.JPanel pnlManual4;
-    private javax.swing.JPanel pnlModos;
     private javax.swing.JTextField txtIngresarNumero;
     // End of variables declaration//GEN-END:variables
 }
