@@ -18,24 +18,41 @@ public class ServicioTombola {
     public ServicioTombola() {
         this.repositorio = new RepositorioTombola();
     }
-    
+
     public boolean ingresarManual(int numero) {
-        return repositorio.obtenerTombola().ingresarNumeroManual(numero);
-    }
-    
-    public int generarAutomatico(){
-        return repositorio.obtenerTombola().generarNumeroAutom().orElse(-1);
-    }
-    
-    public void reiniciarTombola(){
-        repositorio.reiniciarTombola();
-    }
-    
-    public int obtenerUltimoNumero() {
-        return repositorio.obtenerTombola().obtenerUltNumero();
+        Tombola tombola = repositorio.obtenerTombola();
+        int resultado = tombola.ingresarNumeroManual(numero, tombola.getNumerosDisponibles());
+        if (resultado != -1) {
+            tombola.setUltimoNumero(resultado);
+            tombola.notificarNumero(resultado, tombola.getObservadores());
+            return true;
+        }
+        return false;
     }
 
-    public void agregarObserver(TombolaObserver obs) {
-        repositorio.obtenerTombola().agregarObserver(obs);
+    public int generarAutomatico() {
+        Tombola tombola = repositorio.obtenerTombola();
+        int numero = tombola.generarNumeroAutom(tombola.getNumerosDisponibles());
+        if (numero != -1) {
+            tombola.setUltimoNumero(numero);
+            tombola.notificarNumero(numero, tombola.getObservadores());
+            return numero;
+        }
+        return -1;
+    }
+
+    public void reiniciarTombola() {
+        repositorio.reiniciarTombola();
+    }
+
+    public int obtenerUltimoNumero() {
+        Tombola tombola = repositorio.obtenerTombola();
+        return tombola.getUltimoNumero();
+    }
+
+    public void agregarObserver(TombolaObserver observer) {
+        Tombola tombola = repositorio.obtenerTombola();
+        tombola.agregarObserver(observer);
     }
 }
+

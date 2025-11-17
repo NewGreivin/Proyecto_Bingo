@@ -5,18 +5,15 @@
 package Modelo.Tombolas;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
-import java.util.Set;
 
 /**
  *
  * @author Marisol Alfaro
  */
 public class Tombola {
-    private Set<Integer> numerosDisponibles;
+    private List<int[]> numerosDisponibles;
     private int ultimoNumero;
     private List<TombolaObserver> observadores;
 
@@ -24,57 +21,89 @@ public class Tombola {
         this.observadores = new ArrayList<>();
         reiniciarTombola();
     }
-    
-    public void reiniciarTombola(){ 
-        this.numerosDisponibles = new HashSet<>();
-        for(int i=1; i<=75; i++) {
-            this.numerosDisponibles.add(i);
-        }
-        this.ultimoNumero = -1;
+
+    public List<int[]> getNumerosDisponibles() {
+        return numerosDisponibles;
     }
-    
-    public boolean ingresarNumeroManual(int numero) {
-        if(!esNumeroDisponible(numero)) {
-            return false;
-        }
-        numerosDisponibles.remove(numero);
-        this.ultimoNumero = numero;
-        notificarNumero(numero);
-        return true;
+
+    public void setNumerosDisponibles(List<int[]> numerosDisponibles) {
+        this.numerosDisponibles = numerosDisponibles;
     }
-    
-    public Optional<Integer> generarNumeroAutom() {
-       if(numerosDisponibles.isEmpty()) {
-           return Optional.empty();
-       }
-       List<Integer> lista = new ArrayList<>(numerosDisponibles);
-       Random random = new Random();
-       int numero = lista.get(random.nextInt(lista.size()));
-       
-       numerosDisponibles.remove(numero);
-       this.ultimoNumero = numero;
-       notificarNumero(numero);
-       
-       return Optional.of(numero);
-    }
-    
-    public int obtenerUltNumero() {
+
+    public int getUltimoNumero() {
         return ultimoNumero;
     }
-    
-    public boolean esNumeroDisponible(int numero){
-        return numerosDisponibles.contains(numero);
+
+    public void setUltimoNumero(int ultimoNumero) {
+        this.ultimoNumero = ultimoNumero;
     }
-    
-    public void agregarObserver(TombolaObserver obs){
-        if(obs != null){
-            this.observadores.add(obs);
+
+    public List<TombolaObserver> getObservadores() {
+        return observadores;
+    }
+
+    public void setObservadores(List<TombolaObserver> observadores) {
+        this.observadores = observadores;
+    }
+
+    public boolean esNumeroDisponible(int numero, List<int[]> numerosDisponibles) {
+        for (int[] num : numerosDisponibles) {
+            if (num[0] == numero) {
+                return true;
+            }
         }
+        return false;
     }
-    
-    private void notificarNumero(int numero){
-        for(TombolaObserver obs : observadores){
+
+    public int ingresarNumeroManual(int numero, List<int[]> numerosDisponibles) {
+        if (!esNumeroDisponible(numero, numerosDisponibles)) {
+            return -1;
+        }
+        for (int i = 0; i < numerosDisponibles.size(); i++) {
+            if (numerosDisponibles.get(i)[0] == numero) {
+                numerosDisponibles.remove(i);
+                break;
+            }
+        }
+        return numero;
+    }
+
+    public int generarNumeroAutom(List<int[]> numerosDisponibles) {
+        if (numerosDisponibles.isEmpty()) {
+            return -1;
+        }
+        Random random = new Random();
+        int indice = random.nextInt(numerosDisponibles.size());
+        int numero = numerosDisponibles.get(indice)[0];
+        
+        numerosDisponibles.remove(indice);
+        return numero;
+    }
+
+    public void notificarNumero(int numero, List<TombolaObserver> observadores) {
+        for (TombolaObserver obs : observadores) {
             obs.actualizarNumero(numero);
         }
     }
+
+    public List<int[]> inicializarNumeros() {
+        List<int[]> numeros = new ArrayList<>();
+        for (int i = 1; i <= 75; i++) {
+            numeros.add(new int[]{i});
+        }
+        return numeros;
+    }
+
+
+    public void reiniciarTombola() {
+        this.numerosDisponibles = inicializarNumeros();
+        this.ultimoNumero = -1;
+    }
+
+    public void agregarObserver(TombolaObserver obs) {
+        if (obs != null) {
+            this.observadores.add(obs);
+        }
+    }
 }
+

@@ -5,23 +5,49 @@
 package Modelo.Repositorio;
 
 import Modelo.Tombolas.Tombola;
+import Modelo.Tombolas.TombolaObserver;
+import java.util.List;
 
 /**
  *
  * @author Marisol Alfaro
  */
 public class RepositorioTombola {
-    private Tombola tombolaActual;
+     private Tombola tombola;
 
     public RepositorioTombola() {
-        this.tombolaActual = new Tombola();
+        this.tombola = new Tombola();
     }
-    
+
     public Tombola obtenerTombola() {
-        return tombolaActual;
+        return tombola;
     }
-    
-    public void reiniciarTombola(){
-        this.tombolaActual = new Tombola();
+
+    public List<int[]> obtenerNumerosDisponibles() {
+        return tombola.getNumerosDisponibles();
+    }
+
+    public void establecerNumerosDisponibles(List<int[]> numeros) {
+        tombola.setNumerosDisponibles(numeros);
+    }
+
+    public int obtenerUltimoNumero() {
+        return tombola.getUltimoNumero();
+    }
+
+    public void establecerUltimoNumero(int numero) {
+        tombola.setUltimoNumero(numero);
+    }
+
+    public List<TombolaObserver> obtenerObservadores() {
+        return tombola.getObservadores();
+    }
+
+    public void agregarObserver(TombolaObserver obs) {
+        tombola.agregarObserver(obs);
+    }
+
+    public void reiniciarTombola() {
+        this.tombola = new Tombola();
     }
 }

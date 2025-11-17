@@ -4,6 +4,7 @@
  */
 package GUI.Vistas;
 
+import Controladores.ControladorTombola;
 import Modelo.Tombolas.TombolaObserver;
 
 /**
@@ -11,15 +12,20 @@ import Modelo.Tombolas.TombolaObserver;
  * @author Marisol Alfaro
  */
 public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
-    
+    private ControladorTombola controlador;
 
     /**
      * Creates new form PnlTombola
      */
     public PnlTombola() {
         initComponents();
+        this.controlador = controlador;
+        controlador.agregarObserver(this);
+        lblUltimoCantado.setText("-");
     }
-
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,7 +49,7 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
         pnlAutomatico2 = new javax.swing.JPanel();
         lblInfo = new javax.swing.JLabel();
         pnlManual4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblUltimoCantado = new javax.swing.JLabel();
 
         pnlCarton.setBackground(new java.awt.Color(238, 195, 154));
         pnlCarton.setForeground(new java.awt.Color(238, 195, 154));
@@ -223,10 +229,10 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
         pnlManual4.setForeground(new java.awt.Color(51, 51, 51));
         pnlManual4.setPreferredSize(new java.awt.Dimension(176, 53));
 
-        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 20)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("11");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblUltimoCantado.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 20)); // NOI18N
+        lblUltimoCantado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUltimoCantado.setText("11");
+        lblUltimoCantado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout pnlManual4Layout = new javax.swing.GroupLayout(pnlManual4);
         pnlManual4.setLayout(pnlManual4Layout);
@@ -234,14 +240,14 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
             pnlManual4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlManual4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                .addComponent(lblUltimoCantado, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
                 .addContainerGap())
         );
         pnlManual4Layout.setVerticalGroup(
             pnlManual4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlManual4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, Short.MAX_VALUE)
+                .addComponent(lblUltimoCantado, javax.swing.GroupLayout.PREFERRED_SIZE, 15, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -332,16 +338,16 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnGenerarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCantar;
     private javax.swing.JButton btnGenerar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblInfo;
+    private javax.swing.JLabel lblUltimoCantado;
     private javax.swing.JLabel lbl_B1;
     private javax.swing.JPanel pnlAutomatico1;
     private javax.swing.JPanel pnlAutomatico2;
@@ -356,6 +362,6 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
 
     @Override
     public void actualizarNumero(int numero) {
-        
+        lblUltimoCantado.setText(String.valueOf(numero));
     }
 }

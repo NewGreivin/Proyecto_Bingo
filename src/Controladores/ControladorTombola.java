@@ -4,8 +4,7 @@
  */
 package Controladores;
 
-import Modelo.Servicios.ServicioTombola;
-import Modelo.Tombolas.Tombola;
+import Modelo.Facate.ServiciosFacate;
 import Modelo.Tombolas.TombolaObserver;
 
 /**
@@ -13,36 +12,32 @@ import Modelo.Tombolas.TombolaObserver;
  * @author Marisol Alfaro
  */
 public class ControladorTombola {
-    private ServicioTombola servicio;
+    private final ServiciosFacate facate;
 
-    public ControladorTombola(Tombola tombola) {
-        this.servicio = servicio;
+    public ControladorTombola() {
+        this.facate = ServiciosFacate.getInstancia();
     }
     
     public void generarNumero(){
-        servicio.generarAutomatico();
+        facate.getServicioTombola().generarAutomatico();
     }
     
     public void ingresarNumeroManual(int numero){
-        boolean exito = servicio.ingresarManual(numero);
+        boolean exito = facate.getServicioTombola().ingresarManual(numero);
         if(!exito){
             throw new IllegalArgumentException("El numero ingresado ya fue usado");
         }
     }
     
     public int ObtenerUltNumero(){
-        return servicio.obtenerUltimoNumero();
-    }
-    
-    public void agregarObserver(TombolaObserver obs){
-        servicio.agregarObserver(obs);
-    }
-    
-    public void reiniciarTombola(){
-        servicio.reiniciarTombola();
+        Integer ultimo = facate.getServicioTombola().obtenerUltimoNumero();
+        if(ultimo == null) {
+            return -1;
+        }
+        return ultimo;
     }
     
     public void agregarObserver(TombolaObserver observer) {
-        tombola.agregarObserver(observer);
+        facate.getServicioTombola().agregarObserver(observer);
     }
 }
