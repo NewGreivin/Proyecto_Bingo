@@ -31,4 +31,9 @@ public class CartonLleno implements ReglaVictoria{
         return "Gano con carton lleno";
     }
     
+        @Override
+    public String getTipoVictoriaEspecifico(CartonBingo carton) {
+        return "Cartón Lleno";
+    }
+    
 }

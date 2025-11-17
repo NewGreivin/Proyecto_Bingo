@@ -22,7 +22,7 @@ public class ObservadorGanador implements TombolaObserver {
         for (CartonBingo carton : ServiciosFacate.getInstancia().getServicioCarton().obtenerCartones()) {
             if (carton.contieneNumero(numero)) {
                 if (ServiciosFacate.getInstancia().getServicioStrategy().esGanador(carton)) {
-                   String tipoVictoria = ServiciosFacate.getInstancia().getServicioStrategy().obtenerNombreEstrategia();
+                   String tipoVictoria = ServiciosFacate.getInstancia().getServicioStrategy().obtenerTipoVictoriaEspecifico(carton);
                     carton.limpiarNumerosNoGanadores(tipoVictoria);
                     limpiarCartonesNoGanadores(carton);
                     refrescarCartones();

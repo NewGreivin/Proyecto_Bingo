@@ -13,4 +13,5 @@ import Modelo.Cartones.CartonBingo;
 public interface ReglaVictoria {
     public boolean esGanador(CartonBingo carton);
     public String getNombreRegla();
+    public String getTipoVictoriaEspecifico(CartonBingo carton);
 }

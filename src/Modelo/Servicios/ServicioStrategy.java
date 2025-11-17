@@ -30,7 +30,9 @@ public class ServicioStrategy {
     public String obtenerNombreEstrategia() {
         return estrategiaActual.getNombreRegla();
     }
-    
+    public String obtenerTipoVictoriaEspecifico(CartonBingo carton) {
+        return estrategiaActual.getTipoVictoriaEspecifico(carton);
+    }
     public ReglaVictoria getEstrategiaActual() {
         return estrategiaActual;
     }

@@ -26,5 +26,8 @@ public class CuatroEsquinas implements ReglaVictoria{
     public String getNombreRegla() {
         return "Ganaste con cuatri esquinas.";
     }
-    
+        @Override
+    public String getTipoVictoriaEspecifico(CartonBingo carton) {
+        return "Cuatro Esquinas";
+    }
 }
