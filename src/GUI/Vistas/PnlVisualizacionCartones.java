@@ -1,6 +1,9 @@
 
 package GUI.Vistas;
 
+import Modelo.Cartones.CartonBingo;
+import java.util.Collection;
+
 public class PnlVisualizacionCartones extends javax.swing.JPanel {
 
     public PnlVisualizacionCartones() {
@@ -12,6 +15,19 @@ public class PnlVisualizacionCartones extends javax.swing.JPanel {
         contenedorCartones.revalidate();
         contenedorCartones.repaint();
     }
+
+    public void mostrarTodosLosCartones(Collection<CartonBingo> lista) {
+    contenedorCartones.removeAll(); // Limpia los cartones anteriores
+
+    for (CartonBingo carton : lista) {
+        PnlCarton pnl = new PnlCarton();
+        pnl.mostrarCarton(carton);
+        this.agregarCarton(pnl);
+    }
+
+    contenedorCartones.revalidate();
+    contenedorCartones.repaint();
+}
 
     
     @SuppressWarnings("unchecked")

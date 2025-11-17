@@ -15,16 +15,19 @@ import javax.swing.JOptionPane;
 public class DlgCreadorCarton extends javax.swing.JDialog {
     
     private ControladorCarton carton;
+    private PnlVisualizacionCartones panelVisualizacion;
+
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DlgCreadorCarton.class.getName());
 
     /**
      * Ricardo Chaves
      */
-    public DlgCreadorCarton(java.awt.Frame parent, boolean modal) {
+    public DlgCreadorCarton(java.awt.Frame parent, boolean modal, PnlVisualizacionCartones panelVisualizacion) {
         super(parent, modal);
         initComponents();
-        carton = new ControladorCarton();
+        this.panelVisualizacion = panelVisualizacion;
+        this.carton = new ControladorCarton();
     }
     
     public int[][] obtenerValoresFormulario(){
@@ -78,6 +81,11 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
         try {
             CartonBingo cartones = carton.CrearCarton(false, valores);
             JOptionPane.showMessageDialog(this, "Carton fue creado con exito: " + cartones.getId());
+            
+            PnlCarton pnl = new PnlCarton();
+            pnl.mostrarCarton(cartones);
+            panelVisualizacion.agregarCarton(pnl);
+
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "No se puedo crear el carton", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -532,7 +540,8 @@ public class DlgCreadorCarton extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                DlgCreadorCarton dialog = new DlgCreadorCarton(new javax.swing.JFrame(), true);
+                PnlVisualizacionCartones panelVisualizacion = new PnlVisualizacionCartones();
+                DlgCreadorCarton dialog = new DlgCreadorCarton(new javax.swing.JFrame(), true, panelVisualizacion);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
