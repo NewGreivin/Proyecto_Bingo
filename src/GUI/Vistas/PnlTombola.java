@@ -424,6 +424,7 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
                 this, "Error al procesar número: " + e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE );
             txtIngresarNumero.setEnabled(true);
             txtIngresarNumero.requestFocus();
+            
         }
     }//GEN-LAST:event_btnCantarActionPerformed
 
