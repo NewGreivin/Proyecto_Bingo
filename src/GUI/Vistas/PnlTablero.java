@@ -3,11 +3,12 @@
  */
 package GUI.Vistas;
 
+import Modelo.Tombolas.TombolaObserver;
 import java.awt.Component;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public class PnlTablero extends javax.swing.JPanel {
+public class PnlTablero extends javax.swing.JPanel  implements TombolaObserver {
     private JLabel[] labels = new JLabel[76];
     private final ImageIcon iconSinMarcar = cargarIcono("/img/Campo_Bingo.png");
     private final ImageIcon iconMarcado = cargarIcono("/img/Campo_Bingo_positivo.png");
@@ -999,4 +1000,9 @@ public class PnlTablero extends javax.swing.JPanel {
     private javax.swing.JPanel pnlNumeros;
     private javax.swing.JPanel pnlTablero;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizarNumero(int numero) {
+        marcarNumero(numero);
+    }
 }
