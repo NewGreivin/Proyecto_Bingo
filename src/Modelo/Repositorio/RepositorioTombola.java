@@ -6,6 +6,7 @@ package Modelo.Repositorio;
 
 import Modelo.Tombolas.Tombola;
 import Modelo.Tombolas.TombolaObserver;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,6 +49,12 @@ public class RepositorioTombola {
     }
 
     public void reiniciarTombola() {
-        this.tombola.reiniciarTombola();
+         List<TombolaObserver> observadoresActuales = new ArrayList<>(this.tombola.getObservadores());
+
+        this.tombola = new Tombola();
+
+        for (TombolaObserver obs : observadoresActuales) {
+            this.tombola.agregarObserver(obs);
+        }
     }
 }

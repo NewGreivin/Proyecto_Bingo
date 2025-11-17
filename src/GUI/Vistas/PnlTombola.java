@@ -27,7 +27,6 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
     }
     public void limpiarUltimoNumero() {
         lblUltimoCantado.setText("");
-        txtIngresarNumero.setText("");
     }
     
     private void inicializarComponentes() {
