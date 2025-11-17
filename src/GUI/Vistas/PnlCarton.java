@@ -562,13 +562,19 @@ public class PnlCarton extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_19ActionPerformed
 
     private void btnCantarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCantarActionPerformed
-         if (cartonActual != null) {
-            // Usar directamente el Singleton para eliminar
-            ServiciosFacate.getInstancia().getServicioCarton().eliminarCarton(cartonActual.getId());
-        }
+        if (cartonActual != null) {
 
-        // Cerrar esta ventana o diálogo
-        SwingUtilities.getWindowAncestor(this).dispose();
+        // eliminar del almacenamiento central
+        ServiciosFacate.getInstancia()
+            .getServicioCarton()
+            .eliminarCarton(cartonActual.getId());
+
+        // eliminar el panel de la ventana principal SIN CERRARLA
+        Container parent = this.getParent();
+        parent.remove(this);
+        parent.revalidate();
+        parent.repaint();
+    }
     }//GEN-LAST:event_btnCantarActionPerformed
 
 
