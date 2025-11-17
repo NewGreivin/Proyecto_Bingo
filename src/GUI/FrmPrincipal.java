@@ -119,31 +119,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
         int cantidad = dialog.obtenerCantidadCartones();
         
         if (cantidad > 0) {
-            try {
-                Controladores.ControladorCarton controladorCarton = new Controladores.ControladorCarton();
-                for (int i = 0; i < cantidad; i++) {
-                    controladorCarton.CrearCarton(true, null);
-                    
-                    java.util.Collection<Modelo.Cartones.CartonBingo> cartones = controladorCarton.obtenerCartones();
-                    if (!cartones.isEmpty()) {
-                        Modelo.Cartones.CartonBingo carton = cartones.stream().skip(i).findFirst().orElse(null);
-                        if (carton != null) {
-                            PnlCarton pnl = new PnlCarton();
-                            pnl.mostrarCarton(carton);
-                            pnlVisualizacionCartones.agregarCarton(pnl);
-                        }
-                    }
+            Controladores.ControladorCarton controladorCarton = new Controladores.ControladorCarton();
+            for (int i = 0; i < cantidad; i++) {
+                Modelo.Cartones.CartonBingo carton = controladorCarton.CrearCarton(true, null);
+
+                if (carton != null) {
+                    PnlCarton pnl = new PnlCarton();
+                    pnl.mostrarCarton(carton);
+                    pnlVisualizacionCartones.agregarCarton(pnl);
                 }
-                JOptionPane.showMessageDialog(
-                    this,"Se han generado " + cantidad + " cartones automáticamente","Cartones generados"
-                        ,JOptionPane.INFORMATION_MESSAGE
-                );
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(
-                    this,"Error al generar cartones: " + e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE
-                );
             }
         }
+        JOptionPane.showMessageDialog(
+                this, "Se han generado " + cantidad + " cartones automáticamente", "Cartones generados",
+                 JOptionPane.INFORMATION_MESSAGE
+        );
     }
 
     private void mostrarDlgCreadorCartones() {
@@ -264,7 +254,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 carton.reiniciarCarton();
             }
             pnlVisualizacionCartones.refrescarTodosLosCartones();
-            
+           
             if (pnlTombola != null) {
                 pnlTombola.limpiarUltimoNumero();
             }
