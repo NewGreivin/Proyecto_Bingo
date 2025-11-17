@@ -17,7 +17,7 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
     /**
      * Creates new form PnlTombola
      */
-    public PnlTombola() {
+    public PnlTombola(ControladorTombola controlador) {
         initComponents();
         this.controlador = controlador;
         controlador.agregarObserver(this);

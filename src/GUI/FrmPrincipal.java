@@ -16,19 +16,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private PnlTombola pnlTombola;
     private PnlTablero pnlTablero;
     private PnlVisualizacionCartones pnlVisualizacionCartones;
+    private Controladores.ControladorTombola controladorTombola;
 
     public FrmPrincipal() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/img/mini_logo.png")).getImage());
         setLocationRelativeTo(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.controladorTombola = new Controladores.ControladorTombola();
         mostrarDlgSelectorModo();
         crearInternalFrames();
     }
     
     private void crearInternalFrames() {
         // Crear el panel Tombola
-        pnlTombola = new PnlTombola();
+        pnlTombola = new PnlTombola(controladorTombola);
         JInternalFrame frameTombola = new JInternalFrame("Tombola", false, false, false, false);
         frameTombola.add(pnlTombola);
         frameTombola.setSize(398, 363);
