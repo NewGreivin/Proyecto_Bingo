@@ -4,6 +4,7 @@
  */
 package GUI.Vistas;
 
+import javax.swing.JOptionPane;
 import Controladores.ControladorTombola;
 import Modelo.Tombolas.TombolaObserver;
 
@@ -170,6 +171,11 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
         btnCantar.setContentAreaFilled(false);
         btnCantar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCantar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_precionado.png"))); // NOI18N
+        btnCantar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCantarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlManual3Layout = new javax.swing.GroupLayout(pnlManual3);
         pnlManual3.setLayout(pnlManual3Layout);
@@ -338,8 +344,43 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-
+        try{
+            controlador.generarNumero();
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this, "No se pudo generar un número: " + ex.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnGenerarActionPerformed
+
+    private void btnCantarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCantarActionPerformed
+        String texto = txtIngresarNumero.getText().replace(" ", "");
+        
+        if(texto.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Primero ingrese un numero", "Dato requerido", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        int numero;
+        try{
+            numero = Integer.parseInt(texto);
+        } catch(NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Ingrese un numero valido", "Formato incorrecto", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if(numero < 1 || numero > 75){
+            JOptionPane.showMessageDialog(this, "El numero debe estar entre 1 y 75", "Numero fuera de rango", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        try {
+            controlador.ingresarNumeroManual(numero);
+            txtIngresarNumero.setText("");
+        } catch (IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(this,ex.getMessage(), "Número repetido",JOptionPane.WARNING_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this,"Ocurrió un error al cantar el número: " + ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);         
+        }
+    }//GEN-LAST:event_btnCantarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
