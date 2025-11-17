@@ -78,6 +78,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }
     
     private void crearInternalFrames() {
+        // Registrar el observador de ganadores
+        Controladores.ObservadorGanador obsGanador = new Controladores.ObservadorGanador(this);
+        controladorTombola.agregarObserver(obsGanador);
         // Crear el panel Tombola
         pnlTombola = new PnlTombola(controladorTombola);
         JInternalFrame frameTombola = new JInternalFrame("Tombola", false, false, false, false);
