@@ -19,10 +19,8 @@ public class ObservadorGanador implements TombolaObserver {
     
     @Override
     public void actualizarNumero(int numero) {
-        // Verificar si algún cartón ganó
         for (CartonBingo carton : ServiciosFacate.getInstancia().getServicioCarton().obtenerCartones()) {
             if (carton.contieneNumero(numero)) {
-                // Verificar si este cartón es ganador
                 if (ServiciosFacate.getInstancia().getServicioStrategy().esGanador(carton)) {
                    String tipoVictoria = ServiciosFacate.getInstancia().getServicioStrategy().obtenerNombreEstrategia();
                     carton.limpiarNumerosNoGanadores(tipoVictoria);
@@ -53,6 +51,7 @@ public class ObservadorGanador implements TombolaObserver {
             DlgResultados dlg = new DlgResultados(frameParent, true);
             dlg.setCartonGanador(carton.getId());
             dlg.setTipoVictoria(tipoVictoria);
+            dlg.setLocationRelativeTo(frameParent);
             dlg.setVisible(true);
         });
     }
