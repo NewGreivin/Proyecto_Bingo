@@ -8,6 +8,7 @@ import Controladores.ControladorCarton;
 import Modelo.Cartones.CartonBingo;
 import Modelo.Facate.ServiciosFacate;
 import java.awt.Container;
+import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
 import javax.swing.SwingUtilities;
 
@@ -82,6 +83,10 @@ public class PnlCarton extends javax.swing.JPanel {
             }
         }
     }
+    
+    public void mostrarGanador(CartonBingo carton, String nombreRegla) {
+        JOptionPane.showMessageDialog(this, "¡Cartón " + carton.getId() + " ganó con: " + nombreRegla + "!");
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

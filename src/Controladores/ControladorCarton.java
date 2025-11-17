@@ -4,8 +4,10 @@
  */
 package Controladores;
 
+import GUI.Vistas.PnlCarton;
 import Modelo.Cartones.CartonBingo;
 import Modelo.Facate.ServiciosFacate;
+import Modelo.Servicios.ServicioStrategy;
 
 import java.util.Collection;
 
@@ -15,6 +17,8 @@ import java.util.Collection;
  */
 public class ControladorCarton {
     private ServiciosFacate servicio;
+    private ServicioStrategy servios;
+    private PnlCarton vista;
 
     public ControladorCarton() {
         this.servicio = ServiciosFacate.getInstancia();
@@ -36,6 +40,10 @@ public class ControladorCarton {
         for (CartonBingo carton : servicio.getServicioCarton().obtenerCartones()) {
             if (carton.contieneNumero(numero)) {
                 carton.marcarNumero(numero);
+                
+                if(servios.esGanador(carton)){
+                vista.mostrarGanador(carton, servios.obtenerNombreEstrategia());
+                }
             }
         }
     }
