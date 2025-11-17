@@ -7,6 +7,7 @@ import Modelo.Facate.ServiciosFacate;
 import Modelo.Tombolas.TombolaObserver;
 import java.awt.Container;
 import java.awt.Frame;
+import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
 
 public class PnlCarton extends javax.swing.JPanel  implements TombolaObserver{
@@ -570,18 +571,24 @@ public class PnlCarton extends javax.swing.JPanel  implements TombolaObserver{
     }//GEN-LAST:event_btn_19ActionPerformed
 
     private void btnCantarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCantarActionPerformed
-        if (cartonActual != null) {
+            int opcion = JOptionPane.showConfirmDialog(
+            this, "¿Deseas cerrar el carton?", "Carton Cerrado",
+            JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE
+        );
+        
+        if (opcion == JOptionPane.YES_OPTION) {
+            if (cartonActual != null) {
 
-        // eliminar del almacenamiento central
+        // eliminar del almacenamiento
         ServiciosFacate.getInstancia()
             .getServicioCarton()
             .eliminarCarton(cartonActual.getId());
 
-        // eliminar el panel de la ventana principal SIN CERRARLA
         Container parent = this.getParent();
         parent.remove(this);
         parent.revalidate();
         parent.repaint();
+        }
     }
     }//GEN-LAST:event_btnCantarActionPerformed
 
