@@ -79,8 +79,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }
     
     private void crearInternalFrames() {
+        // Crear el panel Visualización de Cartones primero
+        pnlVisualizacionCartones = new PnlVisualizacionCartones();
+        javax.swing.JInternalFrame frameCartones = new javax.swing.JInternalFrame("Cartones", true, false, false, false);
+        frameCartones.add(pnlVisualizacionCartones);
+        frameCartones.setSize(1360, 200);
+        frameCartones.setLocation(10, 360);
+        frameCartones.setVisible(true);
+        desktopPanel.add(frameCartones);
+        
         // Registrar el observador de ganadores
-        Controladores.ObservadorGanador obsGanador = new Controladores.ObservadorGanador(this);
+        Controladores.ObservadorGanador obsGanador = new Controladores.ObservadorGanador(this, pnlVisualizacionCartones);
         controladorTombola.agregarObserver(obsGanador);
         // Crear el panel Tombola
         pnlTombola = new PnlTombola(controladorTombola);
@@ -100,15 +109,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         frameTablero.setLocation(420, 10);
         frameTablero.setVisible(true);
         desktopPanel.add(frameTablero);
-        
-        // Crear el panel Visualización de Cartones
-        pnlVisualizacionCartones = new PnlVisualizacionCartones();
-        javax.swing.JInternalFrame frameCartones = new javax.swing.JInternalFrame("Cartones", true, false, false, false);
-        frameCartones.add(pnlVisualizacionCartones);
-        frameCartones.setSize(1360, 200);
-        frameCartones.setLocation(10, 360);
-        frameCartones.setVisible(true);
-        desktopPanel.add(frameCartones);
     }
 
     private void generarCartonesAutomaticos() {
