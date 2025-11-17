@@ -26,6 +26,8 @@ public class ServiciosFacate {
         this.servicioTablero = new ServicioTablero();
         this.servicioTombola = new ServicioTombola();
         this.servicioStrategy = new ServicioStrategy();
+        
+        this.servicioTombola.setServicioCarton(this.servicioCarton);
     }
 
     public static ServiciosFacate getInstancia() {

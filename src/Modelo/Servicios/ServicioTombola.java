@@ -14,9 +14,15 @@ import Modelo.Tombolas.TombolaObserver;
  */
 public class ServicioTombola {
     private final RepositorioTombola repositorio;
+    private ServicioCarton servicioCarton;
 
     public ServicioTombola() {
         this.repositorio = new RepositorioTombola();
+        this.servicioCarton = null;
+    }
+
+    public void setServicioCarton(ServicioCarton servicioCarton) {
+        this.servicioCarton = servicioCarton;
     }
 
     public boolean ingresarManual(int numero) {
@@ -24,6 +30,7 @@ public class ServicioTombola {
         int resultado = tombola.ingresarNumeroManual(numero, tombola.getNumerosDisponibles());
         if (resultado != -1) {
             tombola.setUltimoNumero(resultado);
+            marcarNumeroEnCartones(resultado);
             tombola.notificarNumero(resultado, tombola.getObservadores());
             return true;
         }
@@ -35,12 +42,17 @@ public class ServicioTombola {
         int numero = tombola.generarNumeroAutom(tombola.getNumerosDisponibles());
         if (numero != -1) {
             tombola.setUltimoNumero(numero);
+            marcarNumeroEnCartones(numero);
             tombola.notificarNumero(numero, tombola.getObservadores());
             return numero;
         }
         return -1;
     }
-
+    private void marcarNumeroEnCartones(int numero) {
+        if (servicioCarton != null) {
+            servicioCarton.marcarNumero(numero);
+        }
+    }
     public void reiniciarTombola() {
         repositorio.reiniciarTombola();
     }
