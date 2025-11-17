@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controladores;
 
 import Modelo.Facate.ServiciosFacate;
+import Modelo.ModoJuego.SeleccionModoJuego;
 import Modelo.Tombolas.TombolaObserver;
 
 /**
@@ -13,11 +10,35 @@ import Modelo.Tombolas.TombolaObserver;
  */
 public class ControladorTombola {
     private final ServiciosFacate facate;
+    private SeleccionModoJuego modoJuego;
 
     public ControladorTombola() {
         this.facate = ServiciosFacate.getInstancia();
+        this.modoJuego = null;
+    }
+
+    public void establecerModoJuego(SeleccionModoJuego modoJuego) {
+        this.modoJuego = modoJuego;
     }
     
+    public SeleccionModoJuego obtenerModoJuego() {
+        return modoJuego;
+    }
+    
+    public boolean esAutomatico() {
+        if (modoJuego == null) {
+            return false;
+        }
+        return modoJuego.isAutomatico();
+    }
+ 
+    public String obtenerTipoVictoria() {
+        if (modoJuego == null) {
+            return "Victoria Normal";
+        }
+        return modoJuego.getTipoVictoria();
+    }
+     
     public void generarNumero(){
         facate.getServicioTombola().generarAutomatico();
     }
