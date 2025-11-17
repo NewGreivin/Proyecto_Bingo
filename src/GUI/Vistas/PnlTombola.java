@@ -4,11 +4,14 @@
  */
 package GUI.Vistas;
 
+import Modelo.Tombolas.TombolaObserver;
+
 /**
  *
- * @author Greivin
+ * @author Marisol Alfaro
  */
-public class PnlTombola extends javax.swing.JPanel {
+public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
+    
 
     /**
      * Creates new form PnlTombola
@@ -50,7 +53,6 @@ public class PnlTombola extends javax.swing.JPanel {
 
         lbl_B1.setBackground(new java.awt.Color(0, 0, 0));
         lbl_B1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
-        lbl_B1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_B1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_B1.setText("TOMBOLA");
 
@@ -80,9 +82,7 @@ public class PnlTombola extends javax.swing.JPanel {
         pnlAutomatico1.setForeground(new java.awt.Color(51, 51, 51));
         pnlAutomatico1.setPreferredSize(new java.awt.Dimension(176, 48));
 
-        txtIngresarNumero.setBackground(new java.awt.Color(255, 255, 255));
         txtIngresarNumero.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 48)); // NOI18N
-        txtIngresarNumero.setForeground(new java.awt.Color(0, 0, 0));
         txtIngresarNumero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIngresarNumero.setText("75");
         txtIngresarNumero.setRequestFocusEnabled(false);
@@ -116,7 +116,6 @@ public class PnlTombola extends javax.swing.JPanel {
         pnlManual2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(238, 195, 154), 3, true));
         pnlManual2.setForeground(new java.awt.Color(51, 51, 51));
 
-        btnGenerar.setBackground(new java.awt.Color(255, 255, 255));
         btnGenerar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
         btnGenerar.setForeground(new java.awt.Color(255, 255, 255));
         btnGenerar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_NO_precionado.png"))); // NOI18N
@@ -125,6 +124,11 @@ public class PnlTombola extends javax.swing.JPanel {
         btnGenerar.setContentAreaFilled(false);
         btnGenerar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGenerar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_precionado.png"))); // NOI18N
+        btnGenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlManual2Layout = new javax.swing.GroupLayout(pnlManual2);
         pnlManual2.setLayout(pnlManual2Layout);
@@ -152,7 +156,6 @@ public class PnlTombola extends javax.swing.JPanel {
         pnlManual3.setForeground(new java.awt.Color(51, 51, 51));
         pnlManual3.setPreferredSize(new java.awt.Dimension(176, 53));
 
-        btnCantar.setBackground(new java.awt.Color(255, 255, 255));
         btnCantar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
         btnCantar.setForeground(new java.awt.Color(255, 255, 255));
         btnCantar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Boton_NO_precionado.png"))); // NOI18N
@@ -211,7 +214,6 @@ public class PnlTombola extends javax.swing.JPanel {
 
         lblInfo.setBackground(new java.awt.Color(0, 0, 0));
         lblInfo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 16)); // NOI18N
-        lblInfo.setForeground(new java.awt.Color(0, 0, 0));
         lblInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblInfo.setText("Ultimo número cantado:");
         lblInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -222,7 +224,6 @@ public class PnlTombola extends javax.swing.JPanel {
         pnlManual4.setPreferredSize(new java.awt.Dimension(176, 53));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("11");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -330,6 +331,10 @@ public class PnlTombola extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCantar;
@@ -348,4 +353,9 @@ public class PnlTombola extends javax.swing.JPanel {
     private javax.swing.JPanel pnlManual4;
     private javax.swing.JTextField txtIngresarNumero;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizarNumero(int numero) {
+        
+    }
 }

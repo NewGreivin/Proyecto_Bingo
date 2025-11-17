@@ -58,7 +58,7 @@ public class Tombola {
        return Optional.of(numero);
     }
     
-    public Integer obtenerUltNumero() {
+    public int obtenerUltNumero() {
         return ultimoNumero;
     }
     
@@ -72,7 +72,7 @@ public class Tombola {
         }
     }
     
-    public void notificarNumero(int numero){
+    private void notificarNumero(int numero){
         for(TombolaObserver obs : observadores){
             obs.actualizarNumero(numero);
         }

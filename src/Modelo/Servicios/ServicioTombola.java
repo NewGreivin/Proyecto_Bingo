@@ -6,6 +6,7 @@ package Modelo.Servicios;
 
 import Modelo.Repositorio.RepositorioTombola;
 import Modelo.Tombolas.Tombola;
+import Modelo.Tombolas.TombolaObserver;
 
 /**
  *
@@ -19,16 +20,22 @@ public class ServicioTombola {
     }
     
     public boolean ingresarManual(int numero) {
-        Tombola tombola = repositorio.obtenerTombola();
-        return tombola.ingresarNumeroManual(numero);
+        return repositorio.obtenerTombola().ingresarNumeroManual(numero);
     }
     
     public int generarAutomatico(){
-        Tombola tombola = repositorio.obtenerTombola();
-        return tombola.generarNumeroAutom().orElse(-1);
+        return repositorio.obtenerTombola().generarNumeroAutom().orElse(-1);
     }
     
     public void reiniciarTombola(){
         repositorio.reiniciarTombola();
+    }
+    
+    public int obtenerUltimoNumero() {
+        return repositorio.obtenerTombola().obtenerUltNumero();
+    }
+
+    public void agregarObserver(TombolaObserver obs) {
+        repositorio.obtenerTombola().agregarObserver(obs);
     }
 }
