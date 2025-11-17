@@ -48,6 +48,6 @@ public class RepositorioTombola {
     }
 
     public void reiniciarTombola() {
-        this.tombola = new Tombola();
+        this.tombola.reiniciarTombola();
     }
 }

@@ -89,6 +89,12 @@ public class PnlCarton extends javax.swing.JPanel  implements TombolaObserver{
         dlg.setVisible(true);
     }
 
+        public void refrescarCarton() {
+        if (cartonActual != null) {
+            mostrarCarton(cartonActual);
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

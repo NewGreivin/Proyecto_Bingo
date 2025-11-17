@@ -210,9 +210,11 @@
                       <Font name="Arial Rounded MT Bold" size="48" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="75"/>
                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIngresarNumeroActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -517,7 +519,6 @@
                           <Font name="Arial Rounded MT Bold" size="20" style="1"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="11"/>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                       </Properties>
                     </Component>

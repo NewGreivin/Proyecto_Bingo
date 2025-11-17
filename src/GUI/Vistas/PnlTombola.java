@@ -25,6 +25,10 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
         lblUltimoCantado.setText("-");
         inicializarComponentes();
     }
+    public void limpiarUltimoNumero() {
+        lblUltimoCantado.setText("");
+        txtIngresarNumero.setText("");
+    }
     
     private void inicializarComponentes() {
         boolean esAutomatico = controlador.esAutomatico();
@@ -103,8 +107,12 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
 
         txtIngresarNumero.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 48)); // NOI18N
         txtIngresarNumero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtIngresarNumero.setText("75");
         txtIngresarNumero.setRequestFocusEnabled(false);
+        txtIngresarNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIngresarNumeroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlAutomatico1Layout = new javax.swing.GroupLayout(pnlAutomatico1);
         pnlAutomatico1.setLayout(pnlAutomatico1Layout);
@@ -249,7 +257,6 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
 
         lblUltimoCantado.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 20)); // NOI18N
         lblUltimoCantado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblUltimoCantado.setText("11");
         lblUltimoCantado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout pnlManual4Layout = new javax.swing.GroupLayout(pnlManual4);
@@ -265,7 +272,7 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
             pnlManual4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlManual4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblUltimoCantado, javax.swing.GroupLayout.PREFERRED_SIZE, 15, Short.MAX_VALUE)
+                .addComponent(lblUltimoCantado, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -389,7 +396,7 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
                 numero = Integer.parseInt(texto);
             } catch (NumberFormatException e) {
                 javax.swing.JOptionPane.showMessageDialog(
-                    this,"Debes ingresar un número válido (1-75)","Entrada inválida",JOptionPane.WARNING_MESSAGE);
+                    this,"Debes ingresar un número válido (1-75)","Invalido",JOptionPane.WARNING_MESSAGE);
                 txtIngresarNumero.setText("");
                 txtIngresarNumero.setEnabled(true);
                 txtIngresarNumero.requestFocus();
@@ -399,7 +406,7 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
             // Validar el rango (1-75)
             if (numero < 1 || numero > 75) {
                 javax.swing.JOptionPane.showMessageDialog(
-                    this,"El número debe estar entre 1 y 75","Rango inválido",JOptionPane.WARNING_MESSAGE );
+                    this,"El número debe estar entre 1 y 75","Fuera del rango",JOptionPane.WARNING_MESSAGE );
                 txtIngresarNumero.setText("");
                 txtIngresarNumero.setEnabled(true);
                 txtIngresarNumero.requestFocus();
@@ -427,6 +434,10 @@ public class PnlTombola extends javax.swing.JPanel implements TombolaObserver {
             
         }
     }//GEN-LAST:event_btnCantarActionPerformed
+
+    private void txtIngresarNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngresarNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIngresarNumeroActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

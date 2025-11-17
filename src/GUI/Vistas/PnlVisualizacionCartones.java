@@ -28,6 +28,16 @@ public class PnlVisualizacionCartones extends javax.swing.JPanel {
     contenedorCartones.revalidate();
     contenedorCartones.repaint();
 }
+    
+        public void refrescarTodosLosCartones() {
+        for (java.awt.Component comp : contenedorCartones.getComponents()) {
+            if (comp instanceof PnlCarton) {
+                ((PnlCarton) comp).refrescarCarton();
+            }
+        }
+        contenedorCartones.revalidate();
+        contenedorCartones.repaint();
+    }
 
     
     @SuppressWarnings("unchecked")

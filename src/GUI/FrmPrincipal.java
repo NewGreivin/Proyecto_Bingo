@@ -8,6 +8,7 @@ import GUI.Vistas.PnlCarton;
 import GUI.Vistas.PnlTablero;
 import GUI.Vistas.PnlTombola;
 import GUI.Vistas.PnlVisualizacionCartones;
+import Modelo.Facate.ServiciosFacate;
 import Modelo.ModoJuego.SeleccionModoJuego;
 import Modelo.Strategy.CartonLleno;
 import Modelo.Strategy.CuatroEsquinas;
@@ -109,10 +110,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         frameCartones.setVisible(true);
         desktopPanel.add(frameCartones);
     }
-    
-    /**
-     * Genera cartones automáticamente solicitando cantidad al usuario
-     */
+
     private void generarCartonesAutomaticos() {
         DlgCreadorAutomatico dialog = new DlgCreadorAutomatico(this, true);
         dialog.setLocationRelativeTo(this);
@@ -189,6 +187,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnReiniciar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
         btnReiniciar.setText("Reiniciar Juego");
         btnReiniciar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
+        btnReiniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReiniciarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PnlInformaciónLayout = new javax.swing.GroupLayout(PnlInformación);
         PnlInformación.setLayout(PnlInformaciónLayout);
@@ -239,6 +242,38 @@ public class FrmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReiniciarActionPerformed
+            int opcion = JOptionPane.showConfirmDialog(
+            this, "¿Deseas reiniciar el juego?", "Confirmar reinicio",
+            JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE
+        );
+        
+        if (opcion == JOptionPane.YES_OPTION) {
+            reiniciarJuego();
+        }
+    }//GEN-LAST:event_btnReiniciarActionPerformed
+
+        private void reiniciarJuego() {
+            ServiciosFacate facate = ServiciosFacate.getInstancia();
+            facate.getServicioTombola().reiniciarTombola();
+            
+            pnlTablero.limpiarTablero();
+
+            Modelo.Servicios.ServicioCarton servicioCarton = facate.getServicioCarton();
+            for (Modelo.Cartones.CartonBingo carton : servicioCarton.obtenerCartones()) {
+                carton.reiniciarCarton();
+            }
+            pnlVisualizacionCartones.refrescarTodosLosCartones();
+            
+            if (pnlTombola != null) {
+                pnlTombola.limpiarUltimoNumero();
+            }
+            lblEstado.setText("Juego reiniciado");
+            
+            JOptionPane.showMessageDialog(
+                this,"El juego ha sido reiniciado.","Juego reiniciado",JOptionPane.INFORMATION_MESSAGE);
+    }
+    
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
